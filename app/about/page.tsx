@@ -230,32 +230,47 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. MANUFACTURING & OPERATIONS */}
-      <section className="py-24 bg-slate-50 overflow-hidden">
+      {/* MANUFACTURING & R&D SECTION */}
+      <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">
-              Manufacturing Excellence
-            </span>
-            <h2 className="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">
-              Industrial Powerhouse.
+          {/* Section header */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-6 h-0.5 bg-brand-blue" />
+              <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
+                Manufacturing & R&D
+              </span>
+              <div className="w-6 h-0.5 bg-brand-blue" />
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
+              Built at Industrial
             </h2>
-          </div>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-brand-blue leading-tight">
+              Scale & Precision.
+            </h2>
+          </MotionDiv>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          {/* Capability cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
             {[
               {
-                icon: <Factory size={34} className="text-blue-600" />,
-                title: "State-of-the-Art Silvassa",
-                desc: "Our high-capacity facility at Silvassa employs cutting-edge extrusion technology for consistent board density.",
+                icon: <Factory size={32} className="text-brand-blue" />,
+                title: "Silvassa Facility",
+                desc: "High-capacity extrusion plant employing cutting-edge technology for consistent board density and dimensional accuracy.",
               },
               {
-                icon: <ShieldCheck size={34} className="text-blue-600" />,
+                icon: <ShieldCheck size={32} className="text-brand-red" />,
                 title: "International Quality",
-                desc: "Every production batch adheres to rigorous international quality standards for thickness and screw retention.",
+                desc: "Every production batch adheres to rigorous international standards for thickness, density, and screw retention.",
               },
               {
-                icon: <Clock size={34} className="text-blue-600" />,
+                icon: <Clock size={32} className="text-brand-blue" />,
                 title: "Uninterrupted Delivery",
                 desc: "Time-bound schedules and robust logistics ensure your project stays on track without material delays.",
               },
@@ -265,71 +280,99 @@ const AboutPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 md:p-7 rounded-[1.75rem] shadow-sm border border-slate-200 hover:shadow-2xl transition-all"
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-all duration-300"
               >
-                <div className="mb-4">{item.icon}</div>
-                <h4 className="text-lg md:text-xl font-black text-slate-900 mb-2 uppercase tracking-tighter italic">
+                <div className="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center mb-6">
+                  {item.icon}
+                </div>
+                <h4 className="font-display font-black text-slate-900 text-lg mb-3">
                   {item.title}
                 </h4>
-                <p className="text-slate-500 text-[13px] font-medium leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </MotionDiv>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* 5. RESEARCH & DEVELOPMENT (R&D) */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-              <div className="w-full aspect-square bg-blue-50 rounded-[4rem] relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-blue-600/5 backdrop-blur-3xl animate-pulse" />
-                <Microscope
-                  size={120}
-                  className="text-blue-600 relative z-10 opacity-20"
-                />
+          {/* R&D — two column */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left — image with floating badge */}
+            <MotionDiv
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600"
-                  className="absolute inset-10 object-cover rounded-[3rem] shadow-2xl z-20"
-                  alt="R&D Lab"
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800"
+                  className="w-full h-96 object-cover"
+                  alt="R&D Laboratory"
                 />
               </div>
-            </div>
+              {/* Floating badge — depth effect */}
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl border border-slate-100 p-6 hidden md:block">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-brand-blue/10 rounded-xl flex items-center justify-center">
+                    <Microscope size={20} className="text-brand-blue" />
+                  </div>
+                  <div>
+                    <span className="block font-display font-black text-slate-900 text-sm">
+                      Active R&D
+                    </span>
+                    <span className="text-[11px] text-slate-400 uppercase tracking-widest">
+                      Continuous Innovation
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </MotionDiv>
+
+            {/* Right — R&D content */}
             <MotionDiv
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <h2 className="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] mb-6 block">
-                Research & Innovation
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase tracking-tighter italic leading-tight">
-                Engineering <br /> The Next Era.
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-6 h-0.5 bg-brand-red" />
+                <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                  Research & Innovation
+                </span>
+              </div>
+              <h3 className="font-display text-3xl font-black text-slate-900 leading-tight mb-2">
+                Engineering
               </h3>
-              <p className="text-lg text-slate-600 font-medium leading-relaxed mb-10">
-                Fixoboard is future-ready. Our dedicated R&D department
-                continuously refines polymer composites to develop new materials
-                that exceed current industrial benchmarks. We don't just
-                supply—we innovate based on real-world furniture industry
-                feedback.
+              <h3 className="font-display text-3xl font-black text-brand-red leading-tight mb-6">
+                The Next Era.
+              </h3>
+              <p className="text-slate-600 leading-relaxed mb-8">
+                Our dedicated R&D department continuously refines polymer
+                composites to develop materials that exceed current industrial
+                benchmarks. We don't just supply — we innovate based on
+                real-world furniture industry feedback.
               </p>
+
+              {/* Checklist */}
               <div className="space-y-4">
-                <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-slate-900">
-                  <Zap size={18} className="text-blue-500" />
-                  Continuous Product Evolution
-                </div>
-                <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-slate-900">
-                  <Zap size={18} className="text-blue-500" />
-                  Client-Centric Customization
-                </div>
-                <div className="flex items-center gap-4 text-sm font-black uppercase tracking-widest text-slate-900">
-                  <Zap size={18} className="text-blue-500" />
-                  Advanced Material Synthesis
-                </div>
+                {[
+                  "Continuous product evolution",
+                  "Client-centric customization",
+                  "Advanced material synthesis",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-brand-red/10 flex items-center justify-center shrink-0">
+                      <Zap size={11} className="text-brand-red" />
+                    </div>
+                    <span className="text-sm font-semibold text-slate-700">
+                      {item}
+                    </span>
+                  </div>
+                ))}
               </div>
             </MotionDiv>
           </div>
