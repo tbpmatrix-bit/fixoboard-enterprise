@@ -139,20 +139,20 @@ const AboutPage: React.FC = () => {
             <h2 className="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Industrial Powerhouse.</h2>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-6">
             {[
               {
-                icon: <Factory size={40} className="text-blue-600" />,
+                icon: <Factory size={34} className="text-blue-600" />,
                 title: 'State-of-the-Art Silvassa',
                 desc: 'Our high-capacity facility at Silvassa employs cutting-edge extrusion technology for consistent board density.'
               },
               {
-                icon: <ShieldCheck size={40} className="text-blue-600" />,
+                icon: <ShieldCheck size={34} className="text-blue-600" />,
                 title: 'International Quality',
                 desc: 'Every production batch adheres to rigorous international quality standards for thickness and screw retention.'
               },
               {
-                icon: <Clock size={40} className="text-blue-600" />,
+                icon: <Clock size={34} className="text-blue-600" />,
                 title: 'Uninterrupted Delivery',
                 desc: 'Time-bound schedules and robust logistics ensure your project stays on track without material delays.'
               }
@@ -163,11 +163,11 @@ const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-200 hover:shadow-2xl transition-all"
+                className="bg-white p-6 md:p-7 rounded-[1.75rem] shadow-sm border border-slate-200 hover:shadow-2xl transition-all"
               >
-                <div className="mb-8">{item.icon}</div>
-                <h4 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter italic">{item.title}</h4>
-                <p className="text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                <div className="mb-4">{item.icon}</div>
+                <h4 className="text-lg md:text-xl font-black text-slate-900 mb-2 uppercase tracking-tighter italic">{item.title}</h4>
+                <p className="text-slate-500 text-[13px] font-medium leading-relaxed">{item.desc}</p>
               </MotionDiv>
             ))}
           </div>
