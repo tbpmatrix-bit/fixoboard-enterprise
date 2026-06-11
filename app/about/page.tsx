@@ -510,6 +510,131 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* MILESTONES TIMELINE SECTION */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section header */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-6 h-0.5 bg-brand-red" />
+              <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                Our Journey
+              </span>
+              <div className="w-6 h-0.5 bg-brand-red" />
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
+              Three Decades of
+            </h2>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight">
+              Milestones.
+            </h2>
+          </MotionDiv>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Center spine line */}
+            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-slate-100 -translate-x-1/2" />
+
+            {/* Milestone items */}
+            <div className="space-y-12">
+              {[
+                {
+                  year: "1994",
+                  title: "Founded in Mumbai",
+                  desc: "Atlantic Polymers Pvt. Ltd. established in Mumbai as one of India's earliest polymer indenting houses, laying the foundation for three decades of excellence.",
+                  color: "red" as const,
+                },
+                {
+                  year: "2000",
+                  title: "Silvassa Manufacturing",
+                  desc: "Commissioned our state-of-the-art manufacturing facility in Silvassa — marking the shift from indenting to full-scale domestic production.",
+                  color: "blue" as const,
+                },
+                {
+                  year: "2008",
+                  title: "Limca Book of Records",
+                  desc: "Fixoboard entered the Limca Book of Indian Records for achievement in product innovation — a nationally recognised milestone in our industry.",
+                  color: "red" as const,
+                },
+                {
+                  year: "2012",
+                  title: "Dubai Branch Opened",
+                  desc: "Established an international presence with our Dubai branch, enabling global sourcing capabilities and access to international markets.",
+                  color: "blue" as const,
+                },
+                {
+                  year: "2018",
+                  title: "SGS Certification",
+                  desc: "Achieved SGS international quality certification — validating our manufacturing processes against the world's most rigorous industrial standards.",
+                  color: "red" as const,
+                },
+                {
+                  year: "2024",
+                  title: "WPC Product Range Launch",
+                  desc: "Expanded into the WPC segment with doors, door frames, and boards — completing Fixoboard's vision of a full building materials ecosystem.",
+                  color: "blue" as const,
+                },
+              ].map((item, idx) => (
+                <MotionDiv
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative flex items-start gap-8 lg:gap-0"
+                >
+                  {/* Connector dot on the spine */}
+                  <div
+                    className={`absolute left-4 lg:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 bg-white z-10 mt-6 ${
+                      item.color === "red"
+                        ? "border-brand-red"
+                        : "border-brand-blue"
+                    }`}
+                  />
+
+                  {/* Mobile layout spacer */}
+                  <div className="w-8 shrink-0 lg:hidden" />
+
+                  {/* Card — alternates left/right on desktop */}
+                  <div
+                    className={`w-full lg:w-1/2 ${
+                      idx % 2 === 0
+                        ? "lg:pr-16 lg:text-right"
+                        : "lg:pl-16 lg:ml-auto"
+                    }`}
+                  >
+                    <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                      {/* Year badge */}
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest mb-3 ${
+                          item.color === "red"
+                            ? "bg-brand-red/10 text-brand-red"
+                            : "bg-brand-blue/10 text-brand-blue"
+                        }`}
+                      >
+                        {item.year}
+                      </span>
+                      <h4 className="font-display font-black text-slate-900 text-lg mb-2">
+                        {item.title}
+                      </h4>
+                      <p className="text-slate-500 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </MotionDiv>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 7. A STEP TOWARDS GREEN REVOLUTION */}
       <section className="py-24 bg-green-50/30 overflow-hidden relative">
         <div className="absolute -right-20 top-20 text-green-600/5 font-black text-[20vw] leading-none pointer-events-none uppercase">
