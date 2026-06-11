@@ -379,30 +379,134 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. VISION STATEMENT */}
-      <section className="py-32 bg-slate-900 text-white relative">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <Eye className="text-blue-500 mx-auto mb-10" size={64} />
-          <h2 className="text-blue-500 font-black uppercase tracking-[0.3em] text-[10px] mb-8 block">
-            Our Vision
-          </h2>
-          <blockquote className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic leading-tight mb-12">
-            "To dominate the future by replacing every piece of traditional
-            plywood, MDF, and particle board with a sustainable,
-            industrial-grade composite that delivers{" "}
-            <span className="text-blue-500">lifetime value.</span>"
-          </blockquote>
-          <div className="flex flex-wrap justify-center gap-6">
-            <span className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
-              Lead Plywood Market
-            </span>
-            <span className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
-              Complete Furniture Solution
-            </span>
-            <span className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
-              Largest WPC Producer
-            </span>
+      {/* MISSION & VISION SECTION */}
+      <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
+        {/* Decorative background text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="font-display font-black text-white/[0.03] text-[20vw] uppercase leading-none">
+            Vision
+          </span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section header */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-6 h-0.5 bg-brand-red" />
+              <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                Purpose & Direction
+              </span>
+              <div className="w-6 h-0.5 bg-brand-red" />
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-white leading-tight mb-2">
+              What Drives
+            </h2>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight">
+              Everything We Do.
+            </h2>
+          </MotionDiv>
+
+          {/* Mission + Vision cards */}
+          <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/10 mb-16">
+            {/* Mission */}
+            <MotionDiv
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-10 lg:pr-16"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mb-8">
+                <Target size={28} className="text-brand-red" />
+              </div>
+              <h3 className="font-display font-black text-white text-2xl mb-4">
+                Our Mission
+              </h3>
+              <p className="text-slate-300 leading-relaxed mb-6">
+                To manufacture and deliver world-class PVC and WPC building
+                materials that empower architects, carpenters, and builders
+                across India — with products that outlast, outperform, and
+                out-value every traditional alternative.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Zero-compromise quality standards",
+                  "Accessible to every market segment",
+                  "Backed by 30+ years of expertise",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
+                    <span className="text-slate-400 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </MotionDiv>
+
+            {/* Vision */}
+            <MotionDiv
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-10 lg:pl-16"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center mb-8">
+                <Eye size={28} className="text-brand-blue" />
+              </div>
+              <h3 className="font-display font-black text-white text-2xl mb-4">
+                Our Vision
+              </h3>
+              <blockquote className="text-slate-300 leading-relaxed mb-6 border-l-2 border-brand-blue pl-4 italic">
+                "To dominate the future by replacing every piece of traditional
+                plywood, MDF, and particle board with a sustainable,
+                industrial-grade composite that delivers{" "}
+                <span className="text-brand-blue not-italic font-semibold">
+                  lifetime value.
+                </span>
+                "
+              </blockquote>
+              <div className="space-y-3">
+                {[
+                  "Lead the plywood replacement market",
+                  "Complete furniture solution provider",
+                  "India's largest WPC producer",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0" />
+                    <span className="text-slate-400 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </MotionDiv>
           </div>
+
+          {/* Bottom pills */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            {[
+              "Lead Plywood Market",
+              "Complete Furniture Solution",
+              "Largest WPC Producer",
+            ].map((pill, idx) => (
+              <span
+                key={idx}
+                className="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[11px] font-semibold uppercase tracking-widest text-slate-300"
+              >
+                {pill}
+              </span>
+            ))}
+          </MotionDiv>
         </div>
       </section>
 
