@@ -752,47 +752,109 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. PRODUCT QUICK LINKS */}
+      {/* CTA + PRODUCT LINKS SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <span className="text-blue-500 font-black uppercase tracking-[0.3em] text-[10px] block mb-4 italic">
+          {/* CTA Band */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-brand-dark rounded-3xl px-10 py-16 mb-16 relative overflow-hidden"
+          >
+            {/* Decorative background text */}
+            <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none select-none">
+              <span className="font-display font-black text-white/[0.03] text-[12vw] uppercase leading-none pr-8">
+                Fixoboard
+              </span>
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-0.5 bg-brand-red" />
+                  <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                    Work With Us
+                  </span>
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-black text-white leading-tight mb-2">
+                  Ready to Build
+                </h2>
+                <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight">
+                  Something Lasting?
+                </h2>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
+                >
+                  Get a Quote <ArrowRight size={15} />
+                </Link>
+                <Link
+                  to="/products"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-200"
+                >
+                  View Products <ArrowRight size={15} />
+                </Link>
+              </div>
+            </div>
+          </MotionDiv>
+
+          {/* Product quick links */}
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 mb-8">
+              <div className="w-6 h-0.5 bg-brand-blue" />
+              <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
                 Quick Navigation
               </span>
-              <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tighter italic">
-                Explore The Range.
-              </h2>
             </div>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              { name: "PVC / WPC Ply", path: "/products/pvc-wpc-ply" },
-              { name: "WPC Door", path: "/products/wpc-doors" },
-              { name: "Prelaminate Ply", path: "/products/prelaminate-ply" },
-              { name: "WPC Door Frames", path: "/products/wpc-door-frames" },
-              {
-                name: "PVC Marble Sheets",
-                path: "/products/pvc-marble-sheets",
-              },
-            ].map((link, idx) => (
-              <Link
-                key={idx}
-                to={link.path}
-                className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:bg-white hover:border-blue-600 hover:shadow-xl transition-all"
-              >
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-6 text-slate-400 group-hover:text-blue-600 transition-colors">
-                  <ChevronRight
-                    size={20}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-                <span className="font-black uppercase tracking-widest text-[10px] text-slate-500 group-hover:text-slate-900 transition-colors">
-                  {link.name}
-                </span>
-              </Link>
-            ))}
-          </div>
+            <h3 className="font-display text-2xl font-black text-slate-900 mb-8">
+              Explore the Range.
+            </h3>
+
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+              {[
+                { name: "PVC / WPC Ply", path: "/products/pvc-wpc-ply" },
+                { name: "WPC Door", path: "/products/wpc-doors" },
+                { name: "Prelaminate Ply", path: "/products/prelaminate-ply" },
+                { name: "WPC Door Frames", path: "/products/wpc-door-frames" },
+                {
+                  name: "PVC Marble Sheets",
+                  path: "/products/pvc-marble-sheets",
+                },
+              ].map((link, idx) => (
+                <MotionDiv
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                >
+                  <Link
+                    to={link.path}
+                    className="group flex flex-col p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:border-brand-blue hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-4 text-slate-300 group-hover:text-brand-blue transition-colors shadow-sm">
+                      <ChevronRight
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform duration-200"
+                      />
+                    </div>
+                    <span className="font-display font-black text-xs text-slate-500 group-hover:text-slate-900 transition-colors leading-snug">
+                      {link.name}
+                    </span>
+                  </Link>
+                </MotionDiv>
+              ))}
+            </div>
+          </MotionDiv>
         </div>
       </section>
 
