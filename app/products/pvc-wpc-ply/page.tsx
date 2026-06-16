@@ -1,125 +1,235 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { products } from "../../../data/products";
+import ProductComparisonTable from "../../../components/product/ProductComparisonTable";
+import {
+  CheckCircle2,
+  Hammer,
+  ShieldCheck,
+  Layers,
+  FileText,
+  Sparkles,
+  ChevronRight,
+  ArrowRight,
+} from "lucide-react";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { products } from '../../../data/products';
-import ProductComparisonTable from '../../../components/product/ProductComparisonTable';
-// Added Sparkles to the import list below
-import { CheckCircle2, Hammer, Droplets, ShieldCheck, Layers, FileText, Sparkles } from 'lucide-react';
-
-// Fix for framer-motion type mismatch
 const MotionDiv = motion.div as any;
 
 const PVCWPCPage: React.FC = () => {
-  const product = products.find(p => p.slug === 'pvc-wpc-ply')!;
+  const product = products.find((p) => p.slug === "pvc-wpc-ply")!;
 
   return (
-    <MotionDiv 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="pb-24"
-    >
-      {/* Product Hero */}
-      <section className="bg-slate-50 py-20 border-b border-slate-200">
+    <div className="bg-white pb-24">
+      {/* ── HERO ── */}
+      <section className="bg-brand-dark py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm block mb-4">Industrial Grade Boards</span>
-              <h1 className="text-5xl font-black text-slate-900 mb-6 leading-tight">
-                PVC / WPC Ply <br />
-                <span className="text-blue-500 font-extrabold text-3xl">Advanced Marine Grade Solution</span>
+            <MotionDiv
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Breadcrumb */}
+              <div className="flex items-center gap-2 text-slate-400 text-xs mb-6">
+                <Link to="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+                <ChevronRight size={12} />
+                <Link
+                  to="/products"
+                  className="hover:text-white transition-colors"
+                >
+                  Products
+                </Link>
+                <ChevronRight size={12} />
+                <span className="text-white">PVC / WPC Ply</span>
+              </div>
+
+              {/* Section label */}
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-6 h-0.5 bg-brand-red" />
+                <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                  Industrial Grade Boards
+                </span>
+              </div>
+
+              <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-2">
+                PVC / WPC
               </h1>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                FixoBoard PVC / WPC Ply is a new generation eco-friendly board. Highly durable with features superior 
-                to traditional plywood. Resistant to weather, moisture, fire, and termites.
+              <h1 className="font-display text-4xl md:text-5xl font-black text-brand-red leading-tight mb-6">
+                Ply.
+              </h1>
+
+              <p className="text-slate-400 text-lg leading-relaxed mb-10">
+                A new generation eco-friendly board — highly durable with
+                features superior to traditional plywood. Resistant to weather,
+                moisture, fire, and termites.
               </p>
-              <div className="flex gap-4">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
-                  Request Pricing
-                </button>
-                <button className="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center gap-2">
-                  <FileText size={20} />
+
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
+                >
+                  Request Pricing <ArrowRight size={15} />
+                </Link>
+                <button className="inline-flex items-center gap-2 bg-white/10 border border-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all">
+                  <FileText size={15} />
                   Download Catalog
                 </button>
               </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={product.images[0]} 
-                alt={product.name}
-                className="w-full h-auto rounded-3xl shadow-2xl border-4 border-white"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
-                  <span className="font-bold text-slate-900">Lead Free Certified</span>
-                </div>
-                <p className="text-xs text-slate-500">Safe for healthcare & food prep areas</p>
+            </MotionDiv>
+
+            {/* Image */}
+            <MotionDiv
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative h-96 rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80"
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-brand-dark/20" />
               </div>
-            </div>
+
+              {/* Floating card */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 hidden md:block">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <span className="font-black text-slate-900 text-sm">
+                    Lead Free Certified
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Safe for healthcare & food prep areas
+                </p>
+              </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
-      {/* Specifications */}
+      {/* ── SPECS + COMPARISON ── */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
+            {/* Left — Comparison Table */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-extrabold text-slate-900 mb-10">Comparative Performance</h2>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-6 h-0.5 bg-brand-blue" />
+                <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
+                  Performance Analysis
+                </span>
+              </div>
+              <h2 className="font-display text-3xl font-black text-slate-900 leading-tight mb-2">
+                Comparative
+              </h2>
+              <h2 className="font-display text-3xl font-black text-brand-blue leading-tight mb-10">
+                Performance.
+              </h2>
               <ProductComparisonTable />
             </div>
-            <div>
-              <h2 className="text-3xl font-extrabold text-slate-900 mb-10">Technical Data</h2>
-              <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
-                <div className="space-y-6">
-                  {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key} className="border-b border-slate-800 pb-4">
-                      <span className="block text-slate-400 text-xs font-bold uppercase mb-1 tracking-wider">{key}</span>
-                      <span className="text-xl font-semibold">{value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-10 p-6 bg-blue-600/10 border border-blue-500/20 rounded-2xl">
-                  <h4 className="font-bold mb-2 flex items-center gap-2">
-                    <CheckCircle2 size={18} />
-                    Custom Sizes
-                  </h4>
-                  <p className="text-sm text-slate-300">We offer custom cutting and thickness production for project-specific requirements.</p>
-                </div>
+
+            {/* Right — Technical Data */}
+            <MotionDiv
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-brand-dark text-white rounded-2xl p-8 flex flex-col"
+            >
+              <div className="flex items-center gap-2 mb-8">
+                <div className="w-6 h-0.5 bg-brand-red" />
+                <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+                  Technical Data
+                </span>
               </div>
-            </div>
+
+              <div className="space-y-5 flex-grow">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="border-b border-white/10 pb-4">
+                    <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest block mb-1">
+                      {key}
+                    </span>
+                    <span className="text-white font-semibold text-sm">
+                      {value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 bg-brand-blue/10 border border-brand-blue/20 rounded-xl p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle2 size={14} className="text-brand-blue" />
+                  <span className="text-brand-blue text-[10px] font-semibold uppercase tracking-widest">
+                    Custom Sizes
+                  </span>
+                </div>
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  We offer custom cutting and thickness production for
+                  project-specific requirements.
+                </p>
+              </div>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
-      {/* Surface Treatments */}
+      {/* ── SURFACE TREATMENTS ── */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Infinite Finish Possibilities</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed text-lg">
-              FixoBoard surface acts as a perfect canvas for all traditional and modern finishing techniques.
-            </p>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-6 h-0.5 bg-brand-red" />
+            <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
+              Finishing Options
+            </span>
+            <div className="w-6 h-0.5 bg-brand-red" />
           </div>
-          
+
+          <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight text-center mb-2">
+            Infinite Finish
+          </h2>
+          <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight text-center mb-6">
+            Possibilities.
+          </h2>
+
+          <p className="text-slate-500 max-w-2xl mx-auto text-center leading-relaxed mb-16">
+            FixoBoard surface acts as a perfect canvas for all traditional and
+            modern finishing techniques.
+          </p>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: 'PU Gloss / Matt', icon: <Sparkles className="text-blue-500" /> },
-              { name: 'Direct Paint', icon: <Hammer className="text-blue-500" /> },
-              { name: 'Digital Printing', icon: <Layers className="text-blue-500" /> },
-              { name: 'PVC Foil / Laminate', icon: <ShieldCheck className="text-blue-500" /> },
+              { name: "PU Gloss / Matt", icon: <Sparkles size={24} /> },
+              { name: "Direct Paint", icon: <Hammer size={24} /> },
+              { name: "Digital Printing", icon: <Layers size={24} /> },
+              { name: "PVC Foil / Laminate", icon: <ShieldCheck size={24} /> },
             ].map((fin, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 text-center flex flex-col items-center hover:border-blue-500 transition-colors">
-                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+              <MotionDiv
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                className="bg-white p-8 rounded-2xl border border-slate-200 text-center flex flex-col items-center hover:border-brand-red transition-colors duration-200 group"
+              >
+                <div className="w-14 h-14 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-red group-hover:text-white transition-all duration-200">
                   {fin.icon}
                 </div>
-                <span className="font-bold text-slate-900">{fin.name}</span>
-              </div>
+                <span className="font-display font-black text-slate-900 text-sm">
+                  {fin.name}
+                </span>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
-    </MotionDiv>
+    </div>
   );
 };
 
