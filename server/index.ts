@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import contactRouter from "./routes/contact";
 import quoteRouter from "./routes/quote";
+import chatRouter from "./routes/chat";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use(
 // POST /api/contact for real, and POST /careers becomes POST /api/careers.
 app.use("/api", contactRouter);
 app.use("/api", quoteRouter);
+app.use("/api", chatRouter);
 
 // Simple health check — useful for confirming the server is alive,
 // and Railway will use something like this to verify deploys later
