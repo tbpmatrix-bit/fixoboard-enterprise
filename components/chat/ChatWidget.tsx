@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Minus } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { GoogleGenAI } from '@google/genai';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MessageCircle, X, Send, Bot, Minus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const MotionDiv = motion.div as any;
 
 interface Message {
   id: string;
-  type: 'bot' | 'user';
+  type: "bot" | "user";
   text: string;
   timestamp: string;
   actions?: { label: string; action: string; type?: string; value?: string }[];
@@ -17,52 +16,33 @@ interface Message {
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const apiKey = (import.meta.env.VITE_GEMINI_API_KEY ?? '').trim();
-  const isAiEnabled = apiKey.length > 0;
-  const chatRef = useRef<any>(null);
-
   const getCurrentTime = () => {
-    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   };
 
   useEffect(() => {
-    if (isAiEnabled) {
-      const ai = new GoogleGenAI({ apiKey });
-      chatRef.current = ai.chats.create({
-        model: 'gemini-3-flash-preview',
-        config: {
-          systemInstruction: `You are Fixoboard's industrial support bot. Fixoboard is a brand by Atlantic Polymers Pvt. Ltd. with over 30 years of history.
-          Makers of high-quality PVC/WPC Ply, WPC Doors, Prelaminate Ply, WPC Door Frames, and PVC Marble Sheets.
-          Features: 100% waterproof, termite proof, lead-free, fire resistant, and industrial grade.
-          Your tone should be professional, helpful, and concise.
-          If users ask about pricing, guide them to the quote page.
-          Our office is in Kandivali (W), Mumbai.
-          Contact: +91 9930349472, info@fixoboard.com.`,
-        },
-      });
-    }
-
     setMessages([
       {
-        id: 'welcome',
-        type: 'bot',
-        text: isAiEnabled
-          ? "Welcome to Fixoboard! I'm your industrial support assistant. How can I help you with our advanced PVC/WPC solutions today?"
-          : 'Welcome to Fixoboard. Chat AI is currently unavailable on this deployment, but you can still contact support or request a quote.',
+        id: "welcome",
+        type: "bot",
+        text: "Welcome to Fixoboard! I'm your industrial support assistant. How can I help you with our advanced PVC/WPC solutions today?",
         timestamp: getCurrentTime(),
         actions: [
-          { label: 'Products', action: 'intent_products' },
-          { label: 'Certifications', action: 'intent_quality' },
-          { label: 'Request Quote', action: 'open_get_quote' },
+          { label: "Products", action: "intent_products" },
+          { label: "Certifications", action: "intent_quality" },
+          { label: "Request Quote", action: "open_get_quote" },
         ],
       },
     ]);
-  }, [apiKey, isAiEnabled]);
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -75,54 +55,42 @@ const ChatWidget: React.FC = () => {
 
     const userMsg: Message = {
       id: Date.now().toString(),
-      type: 'user',
+      type: "user",
       text,
       timestamp: getCurrentTime(),
     };
 
     setMessages((prev) => [...prev, userMsg]);
-    setInputValue('');
-
-    if (!isAiEnabled || !chatRef.current) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now().toString(),
-          type: 'bot',
-          text: 'AI chat is unavailable right now. Please call +91 99303 49472 or open the quote form and our team will respond.',
-          timestamp: getCurrentTime(),
-          actions: [
-            { label: 'Request Quote', action: 'open_get_quote' },
-            { label: 'Call Support', action: 'call_support' },
-          ],
-        },
-      ]);
-      return;
-    }
+    setInputValue("");
 
     setIsTyping(true);
 
     try {
-      const result = await chatRef.current.sendMessage({ message: text });
-      const botResponse = result.text;
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
 
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now().toString(),
-          type: 'bot',
-          text: botResponse,
+          type: "bot",
+          text: data.reply,
           timestamp: getCurrentTime(),
         },
       ]);
     } catch (error) {
-      console.error('Gemini Error:', error);
+      console.error("Chat error:", error);
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now().toString(),
-          type: 'bot',
-          text: "I'm having trouble connecting to our technical database. Please try again or contact us at +91 9930349472.",
+          type: "bot",
+          text: "I'm having trouble connecting right now. Please try again or contact us at +91 9930349472.",
           timestamp: getCurrentTime(),
         },
       ]);
@@ -133,18 +101,18 @@ const ChatWidget: React.FC = () => {
 
   const handleAction = (action: string) => {
     switch (action) {
-      case 'intent_products':
-        handleSendMessage('Tell me about your product range');
+      case "intent_products":
+        handleSendMessage("Tell me about your product range");
         break;
-      case 'intent_quality':
-        handleSendMessage('What certifications do your products have?');
+      case "intent_quality":
+        handleSendMessage("What certifications do your products have?");
         break;
-      case 'open_get_quote':
-        navigate('/get-quote');
+      case "open_get_quote":
+        navigate("/get-quote");
         setIsOpen(false);
         break;
-      case 'call_support':
-        window.location.href = 'tel:+919930349472';
+      case "call_support":
+        window.location.href = "tel:+919930349472";
         break;
       default:
         break;
@@ -168,17 +136,25 @@ const ChatWidget: React.FC = () => {
                   <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-slate-950 rounded-full" />
                 </div>
                 <div>
-                  <h3 className="font-black text-sm uppercase tracking-widest">FixoBoard Support</h3>
+                  <h3 className="font-black text-sm uppercase tracking-widest">
+                    FixoBoard Support
+                  </h3>
                   <p className="text-[10px] font-bold text-green-400 uppercase tracking-tighter">
-                    {isAiEnabled ? 'Online - AI Assistant' : 'Online - Support Assistant'}
+                    Online - AI Assistant
                   </p>
                 </div>
               </div>
               <div className="flex gap-2">
-                <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                >
                   <Minus size={20} />
                 </button>
-                <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                >
                   <X size={20} />
                 </button>
               </div>
@@ -189,15 +165,22 @@ const ChatWidget: React.FC = () => {
               className="flex-grow p-6 overflow-y-auto space-y-6 bg-slate-50/50 scroll-smooth"
             >
               {messages.map((msg) => (
-                <div key={msg.id} className={`flex flex-col ${msg.type === 'user' ? 'items-end' : 'items-start'}`}>
-                  <div className={`max-w-[85%] p-4 rounded-2xl text-sm font-medium leading-relaxed ${
-                    msg.type === 'user'
-                      ? 'bg-red-600 text-white rounded-br-none shadow-lg shadow-red-200'
-                      : 'bg-white text-slate-800 rounded-bl-none shadow-sm border border-slate-200'
-                  }`}>
+                <div
+                  key={msg.id}
+                  className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}
+                >
+                  <div
+                    className={`max-w-[85%] p-4 rounded-2xl text-sm font-medium leading-relaxed ${
+                      msg.type === "user"
+                        ? "bg-red-600 text-white rounded-br-none shadow-lg shadow-red-200"
+                        : "bg-white text-slate-800 rounded-bl-none shadow-sm border border-slate-200"
+                    }`}
+                  >
                     {msg.text}
                   </div>
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1.5 px-1">{msg.timestamp}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1.5 px-1">
+                    {msg.timestamp}
+                  </span>
 
                   {msg.actions && (
                     <div className="flex flex-wrap gap-2 mt-3">
@@ -228,7 +211,10 @@ const ChatWidget: React.FC = () => {
 
             <div className="p-6 bg-white border-t border-slate-100">
               <form
-                onSubmit={(e) => { e.preventDefault(); handleSendMessage(inputValue); }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSendMessage(inputValue);
+                }}
                 className="relative flex items-center"
               >
                 <input
@@ -247,7 +233,7 @@ const ChatWidget: React.FC = () => {
                 </button>
               </form>
               <p className="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-4">
-                Industrial Support Powered by Fixoboard Gemini AI
+                Industrial Support Powered by Fixoboard AI
               </p>
             </div>
           </MotionDiv>
@@ -255,7 +241,9 @@ const ChatWidget: React.FC = () => {
       </AnimatePresence>
 
       <button
-        onClick={() => { setIsOpen(!isOpen); }}
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
         className="group flex items-center gap-3 bg-red-600 text-white px-6 py-4 rounded-full shadow-2xl shadow-red-500/40 hover:bg-red-700 hover:scale-105 transition-all relative"
       >
         <div className="relative">
@@ -268,7 +256,9 @@ const ChatWidget: React.FC = () => {
             />
           )}
         </div>
-        <span className="font-black uppercase tracking-widest text-xs hidden md:inline">Chat with Support</span>
+        <span className="font-black uppercase tracking-widest text-xs hidden md:inline">
+          Chat with Support
+        </span>
 
         {!isOpen && (
           <span className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-20 pointer-events-none" />
