@@ -1,4 +1,5 @@
 // server/routes/chat.ts
+import pool from "../db/client";
 import { Router, Request, Response } from "express";
 
 const router = Router();
@@ -66,6 +67,59 @@ router.post("/chat", async (req: Request, res: Response) => {
     console.error("Error in /api/chat:", err);
     res.status(500).json({ error: "Something went wrong. Please try again." });
   }
+});
+
+// GET /api/chat/history/:roomId — used by ChatWidget on load to check if a
+// live-chat conversation exists and should resume (or show as ended).
+router.get("/chat/history/:roomId", async (req: Request, res: Response) => {
+  const { roomId } = req.params;
+
+  const room = await pool.query(
+    `SELECT room_id, customer_name, status FROM chat_rooms WHERE room_id = $1`,
+    [roomId],
+  );
+
+  if (room.rows.length === 0) {
+    return res.status(404).json({ error: "Room not found." });
+  }
+
+  const messages = await pool.query(
+    `SELECT id, sender, message, created_at FROM chat_messages
+     WHERE room_id = $1 ORDER BY created_at ASC`,
+    [roomId],
+  );
+
+  res.json({
+    roomId: room.rows[0].room_id,
+    customerName: room.rows[0].customer_name,
+    status: room.rows[0].status,
+    messages: messages.rows,
+  });
+});
+
+// GET /api/chat/rooms — list all rooms for the admin dashboard,
+// most recently active first, each with a preview of its last message.
+router.get("/chat/rooms", async (req: Request, res: Response) => {
+  const rooms = await pool.query(
+    `SELECT
+       r.room_id,
+       r.customer_name,
+       r.status,
+       r.last_message_at,
+       m.message AS last_message,
+       m.sender AS last_message_sender
+     FROM chat_rooms r
+     LEFT JOIN LATERAL (
+       SELECT message, sender
+       FROM chat_messages
+       WHERE room_id = r.room_id
+       ORDER BY created_at DESC
+       LIMIT 1
+     ) m ON true
+     ORDER BY r.last_message_at DESC`,
+  );
+
+  res.json({ rooms: rooms.rows });
 });
 
 export default router;
