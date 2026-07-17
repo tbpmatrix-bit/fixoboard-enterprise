@@ -1,3 +1,41 @@
 {
-    "test": "Hello, Fixoboard"
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "products": "Produits",
+    "applications": "Applications",
+    "certifications": "Certifications",
+    "gallery": "Galerie",
+    "news": "Actualités",
+    "contact": "Contact",
+    "productsMega": {
+      "features": "Caractéristiques du Produit",
+      "pvcWpcPly": "Contreplaqué PVC / WPC",
+      "wpcDoors": "Portes WPC",
+      "prelaminatePly": "Contreplaqué Prélaminé",
+      "wpcDoorFrames": "Cadres de Porte WPC",
+      "pvcMarbleSheets": "Plaques de Marbre PVC"
+    },
+    "applicationsMega": {
+      "kitchen": "Cuisine Modulaire",
+      "doors": "Application Portes WPC",
+      "wardrobe": "Armoires et Placards",
+      "office": "Postes de Travail",
+      "wpcGrills": "Grilles WPC",
+      "panels3d": "Panneaux Muraux 3D",
+      "shuttering": "Coffrage et Étaiement",
+      "other": "Autres Applications"
+    }
+  },
+  "cta": {
+    "getQuote": "Demander un Devis",
+    "call": "Appeler",
+    "email": "E-mail"
+  },
+  "topbar": {
+    "locations": "Mumbai · Dubaï · Silvassa"
+  },
+  "aria": {
+    "toggleMenu": "Basculer le menu"
+  }
 }

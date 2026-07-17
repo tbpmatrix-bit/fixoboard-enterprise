@@ -1,3 +1,41 @@
 {
-    "test": "Hello, Fixoboard"
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "applications": "Applications",
+    "certifications": "Certifications",
+    "gallery": "Gallery",
+    "news": "News",
+    "contact": "Contact",
+    "productsMega": {
+      "features": "Product Features",
+      "pvcWpcPly": "PVC / WPC Ply",
+      "wpcDoors": "WPC Doors",
+      "prelaminatePly": "Prelaminate Ply",
+      "wpcDoorFrames": "WPC Door Frames",
+      "pvcMarbleSheets": "PVC Marble Sheets"
+    },
+    "applicationsMega": {
+      "kitchen": "Modular Kitchen",
+      "doors": "WPC Doors Application",
+      "wardrobe": "Wardrobes & Cabinets",
+      "office": "Office Workstations",
+      "wpcGrills": "WPC Grills",
+      "panels3d": "3D Wall Panels",
+      "shuttering": "Shuttering & Centering",
+      "other": "Other Applications"
+    }
+  },
+  "cta": {
+    "getQuote": "Get Quote",
+    "call": "Call",
+    "email": "Email"
+  },
+  "topbar": {
+    "locations": "Mumbai · Dubai · Silvassa"
+  },
+  "aria": {
+    "toggleMenu": "Toggle menu"
+  }
 }

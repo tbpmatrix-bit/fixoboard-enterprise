@@ -20,51 +20,117 @@ import {
 // This teaches TypeScript what shape our nav data has.
 // "?" means the property is optional — not every link has a dropdown.
 interface SubLink {
-  name: string;
+  key: string; // stable identity — never translated, safe for React keys/logic
+  labelKey: string; // path into common.json — this is what gets translated
   path: string;
 }
 
 interface NavLink {
-  name: string;
+  key: string;
+  labelKey: string;
   path: string;
-  mega?: SubLink[]; // "?" = optional array of sub-links
+  mega?: SubLink[];
 }
 
 // ─── NAV DATA ────────────────────────────────────────────────────────────────
-// Kept outside the component so it's not re-created on every render.
+// "key" is a stable English identifier — used for React keys and icon logic,
+// NEVER shown to the user and NEVER translated.
+// "labelKey" points into common.json's "nav" namespace — this is what t() resolves.
 const navLinks: NavLink[] = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
+  { key: "home", labelKey: "nav.home", path: "/" },
+  { key: "about", labelKey: "nav.about", path: "/about" },
   {
-    name: "Products",
+    key: "products",
+    labelKey: "nav.products",
     path: "/products",
     mega: [
-      { name: "Product Features", path: "/products/features" },
-      { name: "PVC / WPC Ply", path: "/products/pvc-wpc-ply" },
-      { name: "WPC Doors", path: "/products/wpc-doors" },
-      { name: "Prelaminate Ply", path: "/products/prelaminate-ply" },
-      { name: "WPC Door Frames", path: "/products/wpc-door-frames" },
-      { name: "PVC Marble Sheets", path: "/products/pvc-marble-sheets" },
+      {
+        key: "features",
+        labelKey: "nav.productsMega.features",
+        path: "/products/features",
+      },
+      {
+        key: "pvcWpcPly",
+        labelKey: "nav.productsMega.pvcWpcPly",
+        path: "/products/pvc-wpc-ply",
+      },
+      {
+        key: "wpcDoors",
+        labelKey: "nav.productsMega.wpcDoors",
+        path: "/products/wpc-doors",
+      },
+      {
+        key: "prelaminatePly",
+        labelKey: "nav.productsMega.prelaminatePly",
+        path: "/products/prelaminate-ply",
+      },
+      {
+        key: "wpcDoorFrames",
+        labelKey: "nav.productsMega.wpcDoorFrames",
+        path: "/products/wpc-door-frames",
+      },
+      {
+        key: "pvcMarbleSheets",
+        labelKey: "nav.productsMega.pvcMarbleSheets",
+        path: "/products/pvc-marble-sheets",
+      },
     ],
   },
   {
-    name: "Applications",
+    key: "applications",
+    labelKey: "nav.applications",
     path: "/applications/kitchen",
     mega: [
-      { name: "Modular Kitchen", path: "/applications/kitchen" },
-      { name: "WPC Doors Application", path: "/applications/doors" },
-      { name: "Wardrobes & Cabinets", path: "/applications/wardrobe" },
-      { name: "Office Workstations", path: "/applications/office" },
-      { name: "WPC Grills", path: "/applications/wpc-grills" },
-      { name: "3D Wall Panels", path: "/applications/3d-panels" },
-      { name: "Shuttering & Centering", path: "/applications/shuttering" },
-      { name: "Other Applications", path: "/applications/other" },
+      {
+        key: "kitchen",
+        labelKey: "nav.applicationsMega.kitchen",
+        path: "/applications/kitchen",
+      },
+      {
+        key: "doors",
+        labelKey: "nav.applicationsMega.doors",
+        path: "/applications/doors",
+      },
+      {
+        key: "wardrobe",
+        labelKey: "nav.applicationsMega.wardrobe",
+        path: "/applications/wardrobe",
+      },
+      {
+        key: "office",
+        labelKey: "nav.applicationsMega.office",
+        path: "/applications/office",
+      },
+      {
+        key: "wpcGrills",
+        labelKey: "nav.applicationsMega.wpcGrills",
+        path: "/applications/wpc-grills",
+      },
+      {
+        key: "panels3d",
+        labelKey: "nav.applicationsMega.panels3d",
+        path: "/applications/3d-panels",
+      },
+      {
+        key: "shuttering",
+        labelKey: "nav.applicationsMega.shuttering",
+        path: "/applications/shuttering",
+      },
+      {
+        key: "other",
+        labelKey: "nav.applicationsMega.other",
+        path: "/applications/other",
+      },
     ],
   },
-  { name: "Certifications", path: "/certifications" },
-  { name: "Gallery", path: "/gallery" },
-  { name: "News", path: "/news" },
-  { name: "Contact", path: "/contact" },
+  {
+    key: "certifications",
+    labelKey: "nav.certifications",
+    path: "/certifications",
+  },
+  { key: "gallery", labelKey: "nav.gallery", path: "/gallery" },
+  { key: "news", labelKey: "nav.news", path: "/news" },
+  { key: "contact", labelKey: "nav.contact", path: "/contact" },
 ];
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
@@ -78,7 +144,7 @@ const Navbar: React.FC = () => {
 
   // useLocation() gives us the current URL path (e.g. "/products")
   const location = useLocation();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // ── SCROLL DETECTION ───────────────────────────────────────────────────────
   // useEffect runs code AFTER the component renders.
@@ -135,7 +201,7 @@ const Navbar: React.FC = () => {
           {/* Right: locations */}
           <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
             <Globe size={11} />
-            Mumbai · Dubai · Silvassa
+            {t("topbar.locations")}
           </div>
         </div>
       </div>
@@ -168,9 +234,9 @@ const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <div
-                  key={link.name}
+                  key={link.key}
                   className="relative"
-                  onMouseEnter={() => setActiveMenu(link.name)}
+                  onMouseEnter={() => setActiveMenu(link.key)}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
                   {/* The nav link itself */}
@@ -186,13 +252,13 @@ const Navbar: React.FC = () => {
                       }
                     `}
                   >
-                    {link.name}
+                    {t(link.labelKey)}
                     {/* Only show chevron if this link HAS a dropdown */}
                     {link.mega && (
                       <ChevronDown
                         size={13}
                         className={`transition-transform duration-200 ${
-                          activeMenu === link.name ? "rotate-180" : ""
+                          activeMenu === link.key ? "rotate-180" : ""
                         }`}
                       />
                     )}
@@ -206,7 +272,7 @@ const Navbar: React.FC = () => {
                   */}
                   {link.mega && (
                     <AnimatePresence>
-                      {activeMenu === link.name && (
+                      {activeMenu === link.key && (
                         <motion.div
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -219,18 +285,18 @@ const Navbar: React.FC = () => {
                             <div className="grid grid-cols-2 gap-1">
                               {link.mega.map((sub) => (
                                 <Link
-                                  key={sub.name}
+                                  key={sub.key}
                                   to={sub.path}
                                   className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-brand-blue hover:text-white transition-all duration-150"
                                 >
                                   <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-white/20 transition-colors shrink-0">
-                                    {link.name === "Products" ? (
+                                    {link.key === "products" ? (
                                       <Box size={14} />
                                     ) : (
                                       <LayoutPanelLeft size={14} />
                                     )}
                                   </div>
-                                  {sub.name}
+                                  {t(sub.labelKey)}
                                 </Link>
                               ))}
                             </div>
@@ -253,14 +319,13 @@ const Navbar: React.FC = () => {
                 to="/get-quote"
                 className="hidden lg:flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-5 py-2.5 rounded-xl text-sm font-bold uppercase tracking-wider transition-all shadow-lg shadow-brand-red/20 hover:shadow-brand-red/30 hover:scale-[1.02]"
               >
-                Get Quote
+                {t("cta.getQuote")}
               </Link>
-
               {/* Mobile menu toggle */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
-                aria-label="Toggle menu"
+                aria-label={t("aria.toggleMenu")}
               >
                 {/* Animate between Menu and X icon */}
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -282,7 +347,7 @@ const Navbar: React.FC = () => {
           >
             <div className="px-4 py-6 space-y-1 pb-20">
               {navLinks.map((link) => (
-                <div key={link.name}>
+                <div key={link.key}>
                   {/* Parent link */}
                   <Link
                     to={link.path}
@@ -296,7 +361,7 @@ const Navbar: React.FC = () => {
                       }
                     `}
                   >
-                    {link.name}
+                    {t(link.labelKey)}
                     {link.mega && (
                       <ChevronDown size={16} className="text-slate-400" />
                     )}
@@ -307,12 +372,12 @@ const Navbar: React.FC = () => {
                     <div className="ml-4 mt-1 mb-2 pl-4 border-l-2 border-slate-100 space-y-0.5">
                       {link.mega.map((sub) => (
                         <Link
-                          key={sub.name}
+                          key={sub.key}
                           to={sub.path}
                           className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-brand-blue hover:bg-slate-50 transition-colors"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0" />
-                          {sub.name}
+                          {t(sub.labelKey)}
                         </Link>
                       ))}
                     </div>
@@ -342,7 +407,7 @@ const Navbar: React.FC = () => {
                   to="/get-quote"
                   className="w-full bg-brand-red text-white py-4 rounded-xl text-center block font-bold uppercase tracking-wider text-sm shadow-lg shadow-brand-red/20"
                 >
-                  Get Quote
+                  {t("cta.getQuote")}
                 </Link>
                 <div className="flex gap-3">
                   <a
@@ -350,7 +415,7 @@ const Navbar: React.FC = () => {
                     className="flex-1 flex items-center justify-center gap-2 py-3 bg-slate-50 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
                   >
                     <Phone size={16} className="text-brand-red" />
-                    Call
+                    {t("cta.call")}
                   </a>
 
                   <a
@@ -358,7 +423,7 @@ const Navbar: React.FC = () => {
                     className="flex-1 flex items-center justify-center gap-2 py-3 bg-slate-50 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
                   >
                     <Mail size={16} className="text-brand-blue" />
-                    Email
+                    {t("cta.email")}
                   </a>
                 </div>
               </div>
