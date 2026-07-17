@@ -37,5 +37,24 @@
   },
   "aria": {
     "toggleMenu": "Alternar menú"
+  },
+  
+  "footer": {
+    "tagline": "Atlantic Polymers Pvt. Ltd. es pionera en la fabricación de PVC desde hace más de tres décadas. Fabricantes de FixoBoard, el contrachapado marino avanzado más confiable de la India.",
+    "productsHeading": "Enlaces Rápidos de Productos",
+    "navHeading": "Navegación Rápida",
+    "contactHeading": "Información de Contacto",
+    "downloadCatalogue": "Descargar Catálogo",
+    "wpcSolidDoors": "Puertas Sólidas WPC",
+    "corporateProfile": "Perfil Corporativo",
+    "newsUpdates": "Noticias y Actualizaciones",
+    "applications": "Aplicaciones",
+    "distributorship": "Distribución",
+    "adminPortal": "Portal de Administración",
+    "address": "Sejal Encasa, Oficina N.º 4A, 4.º Piso, S.V. Road, Kandivali (Oeste), Mumbai – 400067, Maharashtra, India.",
+    "copyright": "© {{year}} Fixoboard. Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "sitemap": "Mapa del Sitio"
   }
 }

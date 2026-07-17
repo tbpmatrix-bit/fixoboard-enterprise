@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Facebook,
   Twitter,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -32,9 +34,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400 mb-8">
-              Atlantic Polymers Pvt. Ltd. is a pioneer in PVC manufacturing for
-              over three decades. Makers of FixoBoard - India's most trusted
-              advanced marine ply.
+              {t("footer.tagline")}
             </p>
             <div className="flex gap-4">
               <a
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">
-              Products Quick Links
+              {t("footer.productsHeading")}
             </h4>
             <ul className="space-y-4 text-sm">
               <li>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                   to="/products/pvc-wpc-ply"
                   className="hover:text-red-500 transition-colors"
                 >
-                  PVC / WPC Ply
+                  {t("nav.productsMega.pvcWpcPly")}
                 </Link>
               </li>
               <li>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                   to="/products/wpc-doors"
                   className="hover:text-red-500 transition-colors"
                 >
-                  WPC Solid Doors
+                  {t("footer.wpcSolidDoors")}
                 </Link>
               </li>
               <li>
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
                   to="/products/prelaminate-ply"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Prelaminate Ply
+                  {t("nav.productsMega.prelaminatePly")}
                 </Link>
               </li>
               <li>
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                   to="/products/wpc-door-frames"
                   className="hover:text-red-500 transition-colors"
                 >
-                  WPC Door Frames
+                  {t("nav.productsMega.wpcDoorFrames")}
                 </Link>
               </li>
               <li>
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
                   to="/products/pvc-marble-sheets"
                   className="hover:text-red-500 transition-colors"
                 >
-                  PVC Marble Sheets
+                  {t("nav.productsMega.pvcMarbleSheets")}
                 </Link>
               </li>
               <li className="pt-2 border-t border-slate-800">
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
                   className="text-red-600 flex items-center gap-2 font-bold hover:text-red-500 transition-colors"
                 >
                   <FileDown size={16} />
-                  Download Catalogue
+                  {t("footer.downloadCatalogue")}
                 </a>
               </li>
             </ul>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">
-              Quick Navigation
+              {t("footer.navHeading")}
             </h4>
             <ul className="space-y-4 text-sm">
               <li>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                   to="/about"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Corporate Profile
+                  {t("footer.corporateProfile")}
                 </Link>
               </li>
               <li>
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
                   to="/certifications"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Certifications
+                  {t("nav.certifications")}
                 </Link>
               </li>
               <li>
@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
                   to="/gallery"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Gallery
+                  {t("nav.gallery")}
                 </Link>
               </li>
               <li>
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
                   to="/news"
                   className="hover:text-red-500 transition-colors"
                 >
-                  News & Updates
+                  {t("footer.newsUpdates")}
                 </Link>
               </li>
               <li>
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
                   to="/applications/kitchen"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Applications
+                  {t("footer.applications")}
                 </Link>
               </li>
               <li>
@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
                   to="/contact"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Distributorship
+                  {t("footer.distributorship")}
                 </Link>
               </li>
               <li className="pt-4 border-t border-slate-800 flex flex-col gap-2">
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
                     to="/admin/dashboard"
                     className="text-slate-500 group-hover:text-red-500 transition-colors font-bold uppercase tracking-widest text-[10px]"
                   >
-                    Admin Portal
+                    {t("footer.adminPortal")}
                   </Link>
                 </div>
               </li>
@@ -187,15 +187,12 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">
-              Contact Information
+              {t("footer.contactHeading")}
             </h4>
             <ul className="space-y-5 text-sm">
               <li className="flex gap-3">
                 <MapPin size={18} className="text-red-600 shrink-0" />
-                <span className="leading-relaxed">
-                  Sejal Encasa, Office No. 4A, 4th Floor, S.V. Road, Kandivali
-                  (West), Mumbai – 400067, Maharashtra, India.
-                </span>
+                <span className="leading-relaxed">{t("footer.address")}</span>
               </li>
               <li className="flex gap-3">
                 <Phone size={18} className="text-red-600 shrink-0" />
@@ -228,18 +225,16 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-          <p>
-            © {currentYear} Fixoboard by Ankita Kumari. All rights reserved.
-          </p>
+          <p>{t("footer.copyright", { year: currentYear })}</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
+              {t("footer.termsOfService")}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Sitemap
+              {t("footer.sitemap")}
             </a>
           </div>
         </div>

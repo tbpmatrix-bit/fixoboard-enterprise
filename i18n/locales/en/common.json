@@ -37,5 +37,24 @@
   },
   "aria": {
     "toggleMenu": "Toggle menu"
+  },
+
+  "footer": {
+    "tagline": "Atlantic Polymers Pvt. Ltd. is a pioneer in PVC manufacturing for over three decades. Makers of FixoBoard - India's most trusted advanced marine ply.",
+    "productsHeading": "Products Quick Links",
+    "navHeading": "Quick Navigation",
+    "contactHeading": "Contact Information",
+    "downloadCatalogue": "Download Catalogue",
+    "wpcSolidDoors": "WPC Solid Doors",
+    "corporateProfile": "Corporate Profile",
+    "newsUpdates": "News & Updates",
+    "applications": "Applications",
+    "distributorship": "Distributorship",
+    "adminPortal": "Admin Portal",
+    "address": "Sejal Encasa, Office No. 4A, 4th Floor, S.V. Road, Kandivali (West), Mumbai – 400067, Maharashtra, India.",
+    "copyright": "© {{year}} Fixoboard. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "sitemap": "Sitemap"
   }
 }
