@@ -79,5 +79,73 @@
     "lifetimeDesc": "Construction très durable qui conserve sa valeur pendant des décennies.",
     "hygienicTitle": "Hygiénique",
     "hygienicDesc": "Surface antibactérienne facile à désinfecter et à entretenir."
+  },
+  "leadFree": {
+    "label": "Qualité Certifiée",
+    "headingLine1": "Sans Plomb et",
+    "headingLine2": "Qualité Internationale.",
+    "leadContentLabel": "Teneur en Plomb",
+    "sgsTestedLabel": "Testé en Laboratoire SGS",
+    "isoLabel": "Conformité ISO 9001",
+    "leadFreeCertifiedLabel": "Certifié Sans Plomb",
+    "paragraph": "Le contreplaqué PVC/WPC Fixoboard est 100 % sans plomb et certifié SGS. Nos tests internes rigoureux garantissent que chaque panneau respecte les normes internationales de sécurité, de durabilité et de conformité, le rendant sûr aussi bien pour les habitations que pour les hôpitaux et les espaces commerciaux.",
+    "ctaViewCertifications": "Voir toutes les certifications"
+  },
+  "features": {
+    "label": "Données Techniques",
+    "headingPre": "Caractéristiques",
+    "headingHighlight": "du Produit.",
+    "viewAllFeatures": "Voir Toutes les Caractéristiques",
+    "browseAllProducts": "Parcourir tous les produits"
+  },
+  "architect": {
+    "label": "Pour les Professionnels",
+    "heading": "Coin de l'Architecte.",
+    "paragraph": "Le WPC est la solution définitive de nouvelle génération pour les architectes. Il élimine les problèmes structurels et biologiques associés au contreplaqué, permettant des portefeuilles de qualité qui durent toute une vie.",
+    "zeroWarpTitle": "Zéro Déformation",
+    "zeroWarpDesc": "Stabilité structurelle garantie",
+    "antiPestTitle": "Anti-Nuisibles",
+    "antiPestDesc": "Protection biologique complète intégrée",
+    "moistureTitle": "Étanche à l'Humidité",
+    "moistureDesc": "Résistance à l'eau de qualité marine",
+    "fireSafeTitle": "Sécurité Incendie",
+    "fireSafeDesc": "Certifié Classe 1, auto-extinguible",
+    "ctaExploreApplications": "Explorer les Applications",
+    "trustedBadge": "Approuvé par les Architectes"
+  },
+  "carpenter": {
+    "label": "Pour les Artisans",
+    "heading": "Coin du Charpentier.",
+    "paragraph": "Révolutionner l'industrie de la charpenterie avec des matériaux conçus pour un assemblage facile, une fixation permanente et une installation plus rapide. Compatible avec tous les outils et quincailleries traditionnels.",
+    "toolCompatibleTitle": "Compatible avec les Outils",
+    "toolCompatibleSub": "Toute quincaillerie standard",
+    "highScrewLabel": "Excellente Tenue des Vis",
+    "standardToolsLabel": "Compatible Outils Standards",
+    "noEdgeBandingLabel": "Aucun Chant à Poser",
+    "fasterTurnaroundLabel": "Chantiers Plus Rapides",
+    "ctaReadTechGuides": "Lire les Guides Techniques"
+  },
+  "contact": {
+    "label": "Contactez-Nous",
+    "headingLine1": "Envoyez-Nous",
+    "headingHighlight": "un Message.",
+    "intro": "Notre équipe répond sous 24 heures. Contactez-nous pour toute question sur les produits, commandes en gros, demandes de distribution ou support technique.",
+    "callUsLabel": "Appelez-Nous",
+    "emailUsLabel": "Écrivez-Nous",
+    "visitUsLabel": "Visitez-Nous",
+    "ourLocationsLabel": "Nos Emplacements",
+    "successTitle": "Message Reçu !",
+    "successDesc": "Merci de nous avoir contactés. Nous vous répondrons sous peu.",
+    "formTitle": "Envoyer une Demande",
+    "formSubtitle": "Remplissez le formulaire et nous vous répondrons.",
+    "fullNameLabel": "Nom Complet",
+    "emailAddressLabel": "Adresse E-mail",
+    "phoneNumberLabel": "Numéro de Téléphone",
+    "messageLabel": "Message",
+    "namePlaceholder": "Jean Dupont",
+    "emailPlaceholder": "jean@entreprise.com",
+    "phonePlaceholder": "+33 6 12 34 56 78",
+    "messagePlaceholder": "Parlez-nous de votre projet ou de votre demande...",
+    "submitInquiry": "Envoyer la Demande"
   }
 }

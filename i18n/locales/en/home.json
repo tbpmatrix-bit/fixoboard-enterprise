@@ -79,5 +79,73 @@
     "lifetimeDesc": "Highly durable construction that maintains value for decades.",
     "hygienicTitle": "Hygienic",
     "hygienicDesc": "Anti-bacterial surface easy to sanitize and maintain."
+  },
+  "leadFree": {
+    "label": "Certified Quality",
+    "headingLine1": "Lead-Free &",
+    "headingLine2": "International Quality.",
+    "leadContentLabel": "Lead Content",
+    "sgsTestedLabel": "SGS Laboratory Tested",
+    "isoLabel": "ISO 9001 Compliance",
+    "leadFreeCertifiedLabel": "Lead-Free Certified",
+    "paragraph": "Fixoboard PVC/WPC Ply is 100% lead-free and SGS Certified. Our thorough in-house testing ensures that every board meets international standards for safety, durability, and compliance — making it safe for homes, hospitals, and commercial spaces alike.",
+    "ctaViewCertifications": "View all certifications"
+  },
+  "features": {
+    "label": "Technical Data",
+    "headingPre": "Product",
+    "headingHighlight": "Features.",
+    "viewAllFeatures": "View All Features",
+    "browseAllProducts": "Browse all products"
+  },
+  "architect": {
+    "label": "For Professionals",
+    "heading": "Architect's Corner.",
+    "paragraph": "WPC is the definitive next-generation solution for architects. It eliminates the structural and biological problems associated with plywood — enabling quality portfolios that last a lifetime.",
+    "zeroWarpTitle": "Zero Warp",
+    "zeroWarpDesc": "Structural stability guaranteed",
+    "antiPestTitle": "Anti-Pest",
+    "antiPestDesc": "Full biological guard built-in",
+    "moistureTitle": "Moisture Proof",
+    "moistureDesc": "Marine grade water resistance",
+    "fireSafeTitle": "Fire Safe",
+    "fireSafeDesc": "Class 1 certified, self-extinguishing",
+    "ctaExploreApplications": "Explore Applications",
+    "trustedBadge": "Trusted by Architects"
+  },
+  "carpenter": {
+    "label": "For Tradespeople",
+    "heading": "Carpenter's Corner.",
+    "paragraph": "Revolutionizing the carpentry industry with materials designed for easy assembling, permanent bonding, and faster installation. Compatible with all traditional tools and hardware.",
+    "toolCompatibleTitle": "Tool Compatible",
+    "toolCompatibleSub": "All standard hardware",
+    "highScrewLabel": "High Screw Holding",
+    "standardToolsLabel": "Standard Tools Compatible",
+    "noEdgeBandingLabel": "No Edge Banding Needs",
+    "fasterTurnaroundLabel": "Faster Project Turnaround",
+    "ctaReadTechGuides": "Read Tech Guides"
+  },
+  "contact": {
+    "label": "Get In Touch",
+    "headingLine1": "Drop Us",
+    "headingHighlight": "a Line.",
+    "intro": "Our team responds within 24 hours. Reach out for product queries, bulk orders, distributor inquiries, or technical support.",
+    "callUsLabel": "Call Us",
+    "emailUsLabel": "Email Us",
+    "visitUsLabel": "Visit Us",
+    "ourLocationsLabel": "Our Locations",
+    "successTitle": "Message Received!",
+    "successDesc": "Thank you for reaching out. We will get back to you shortly.",
+    "formTitle": "Send an Inquiry",
+    "formSubtitle": "Fill in the form and we'll get back to you.",
+    "fullNameLabel": "Full Name",
+    "emailAddressLabel": "Email Address",
+    "phoneNumberLabel": "Phone Number",
+    "messageLabel": "Message",
+    "namePlaceholder": "John Smith",
+    "emailPlaceholder": "john@company.com",
+    "phonePlaceholder": "+91 98765 43210",
+    "messagePlaceholder": "Tell us about your project or inquiry...",
+    "submitInquiry": "Submit Inquiry"
   }
 }

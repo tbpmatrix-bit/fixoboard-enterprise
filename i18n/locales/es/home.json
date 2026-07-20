@@ -79,5 +79,73 @@
     "lifetimeDesc": "Construcción muy duradera que mantiene su valor durante décadas.",
     "hygienicTitle": "Higiénico",
     "hygienicDesc": "Superficie antibacteriana, fácil de desinfectar y mantener."
+  },
+  "leadFree": {
+    "label": "Calidad Certificada",
+    "headingLine1": "Sin Plomo y",
+    "headingLine2": "Calidad Internacional.",
+    "leadContentLabel": "Contenido de Plomo",
+    "sgsTestedLabel": "Probado en Laboratorio SGS",
+    "isoLabel": "Cumplimiento ISO 9001",
+    "leadFreeCertifiedLabel": "Certificado Libre de Plomo",
+    "paragraph": "Fixoboard PVC/WPC Ply es 100% libre de plomo y está certificado por SGS. Nuestras rigurosas pruebas internas garantizan que cada panel cumpla con los estándares internacionales de seguridad, durabilidad y cumplimiento normativo, haciéndolo seguro tanto para hogares como para hospitales y espacios comerciales.",
+    "ctaViewCertifications": "Ver todas las certificaciones"
+  },
+  "features": {
+    "label": "Datos Técnicos",
+    "headingPre": "Características",
+    "headingHighlight": "del Producto.",
+    "viewAllFeatures": "Ver Todas las Características",
+    "browseAllProducts": "Ver todos los productos"
+  },
+  "architect": {
+    "label": "Para Profesionales",
+    "heading": "Rincón del Arquitecto.",
+    "paragraph": "WPC es la solución definitiva de nueva generación para arquitectos. Elimina los problemas estructurales y biológicos asociados con el contrachapado, permitiendo portafolios de calidad que duran toda la vida.",
+    "zeroWarpTitle": "Cero Deformación",
+    "zeroWarpDesc": "Estabilidad estructural garantizada",
+    "antiPestTitle": "Anti-Plagas",
+    "antiPestDesc": "Protección biológica completa incorporada",
+    "moistureTitle": "A Prueba de Humedad",
+    "moistureDesc": "Resistencia al agua de grado marino",
+    "fireSafeTitle": "Seguro contra Incendios",
+    "fireSafeDesc": "Certificado Clase 1, autoextinguible",
+    "ctaExploreApplications": "Explorar Aplicaciones",
+    "trustedBadge": "Confiado por Arquitectos"
+  },
+  "carpenter": {
+    "label": "Para Profesionales del Oficio",
+    "heading": "Rincón del Carpintero.",
+    "paragraph": "Revolucionando la industria de la carpintería con materiales diseñados para un ensamblaje fácil, unión permanente e instalación más rápida. Compatible con todas las herramientas y accesorios tradicionales.",
+    "toolCompatibleTitle": "Compatible con Herramientas",
+    "toolCompatibleSub": "Todo el herraje estándar",
+    "highScrewLabel": "Alta Sujeción de Tornillos",
+    "standardToolsLabel": "Compatible con Herramientas Estándar",
+    "noEdgeBandingLabel": "Sin Necesidad de Canteado",
+    "fasterTurnaroundLabel": "Proyectos Más Rápidos",
+    "ctaReadTechGuides": "Leer Guías Técnicas"
+  },
+  "contact": {
+    "label": "Ponte en Contacto",
+    "headingLine1": "Escríbenos",
+    "headingHighlight": "una Línea.",
+    "intro": "Nuestro equipo responde en un plazo de 24 horas. Contáctanos para consultas sobre productos, pedidos al por mayor, consultas de distribución o soporte técnico.",
+    "callUsLabel": "Llámanos",
+    "emailUsLabel": "Escríbenos",
+    "visitUsLabel": "Visítanos",
+    "ourLocationsLabel": "Nuestras Ubicaciones",
+    "successTitle": "¡Mensaje Recibido!",
+    "successDesc": "Gracias por contactarnos. Nos pondremos en contacto contigo en breve.",
+    "formTitle": "Enviar una Consulta",
+    "formSubtitle": "Completa el formulario y nos pondremos en contacto contigo.",
+    "fullNameLabel": "Nombre Completo",
+    "emailAddressLabel": "Correo Electrónico",
+    "phoneNumberLabel": "Número de Teléfono",
+    "messageLabel": "Mensaje",
+    "namePlaceholder": "Juan Pérez",
+    "emailPlaceholder": "juan@empresa.com",
+    "phonePlaceholder": "+34 600 123 456",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto o consulta...",
+    "submitInquiry": "Enviar Consulta"
   }
 }

@@ -705,7 +705,7 @@ const HomePage: React.FC = () => {
                         0%
                       </span>
                       <span className="text-xs text-brand-red font-bold uppercase tracking-widest">
-                        Lead Content
+                        {t("leadFree.leadContentLabel")}
                       </span>
                     </div>
                   </div>
@@ -713,16 +713,25 @@ const HomePage: React.FC = () => {
                   {/* Three mini stats inside the card */}
                   <div className="space-y-3 border-t border-white/10 pt-6">
                     {[
-                      { label: "SGS Laboratory Tested", dot: "bg-brand-blue" },
-                      { label: "ISO 9001 Compliance", dot: "bg-brand-red" },
-                      { label: "Lead-Free Certified", dot: "bg-emerald-500" },
+                      {
+                        labelKey: "leadFree.sgsTestedLabel",
+                        dot: "bg-brand-blue",
+                      },
+                      { labelKey: "leadFree.isoLabel", dot: "bg-brand-red" },
+                      {
+                        labelKey: "leadFree.leadFreeCertifiedLabel",
+                        dot: "bg-emerald-500",
+                      },
                     ].map((item) => (
-                      <div key={item.label} className="flex items-center gap-3">
+                      <div
+                        key={item.labelKey}
+                        className="flex items-center gap-3"
+                      >
                         <div
                           className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`}
                         />
                         <span className="text-xs text-slate-400 font-medium uppercase tracking-wider">
-                          {item.label}
+                          {t(item.labelKey)}
                         </span>
                       </div>
                     ))}
@@ -749,23 +758,19 @@ const HomePage: React.FC = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-blue" />
                 <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
-                  Certified Quality
+                  {t("leadFree.label")}
                 </span>
               </div>
 
               <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
-                Lead-Free &
+                {t("leadFree.headingLine1")}
               </h2>
               <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight mb-6">
-                International Quality.
+                {t("leadFree.headingLine2")}
               </h2>
 
               <p className="text-slate-500 leading-relaxed mb-8">
-                Fixoboard PVC/WPC Ply is 100% lead-free and SGS Certified. Our
-                thorough in-house testing ensures that every board meets
-                international standards for safety, durability, and compliance —
-                making it safe for homes, hospitals, and commercial spaces
-                alike.
+                {t("leadFree.paragraph")}
               </p>
 
               {/* 
@@ -775,24 +780,24 @@ const HomePage: React.FC = () => {
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
                   {
-                    label: "SGS Laboratory Tested",
+                    labelKey: "leadFree.sgsTestedLabel",
                     color:
                       "bg-brand-blue/10 text-brand-blue border-brand-blue/20",
                   },
                   {
-                    label: "ISO 9001 Compliance",
+                    labelKey: "leadFree.isoLabel",
                     color: "bg-brand-red/10 text-brand-red border-brand-red/20",
                   },
                   {
-                    label: "Lead-Free Certified",
+                    labelKey: "leadFree.leadFreeCertifiedLabel",
                     color: "bg-emerald-50 text-emerald-700 border-emerald-200",
                   },
                 ].map((pill) => (
                   <div
-                    key={pill.label}
+                    key={pill.labelKey}
                     className={`px-4 py-2 rounded-full text-[11px] font-semibold uppercase tracking-wider border ${pill.color}`}
                   >
-                    {pill.label}
+                    {t(pill.labelKey)}
                   </div>
                 ))}
               </div>
@@ -802,7 +807,7 @@ const HomePage: React.FC = () => {
                 to="/certifications"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-brand-blue hover:gap-4 transition-all duration-200"
               >
-                View all certifications
+                {t("leadFree.ctaViewCertifications")}
                 <ArrowRight size={15} />
               </Link>
             </MotionDiv>
@@ -819,24 +824,27 @@ const HomePage: React.FC = () => {
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Technical Data
+                  {t("features.label")}
                 </span>
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-                Product <span className="text-brand-blue">Features.</span>
+                {t("features.headingPre")}{" "}
+                <span className="text-brand-blue">
+                  {t("features.headingHighlight")}
+                </span>
               </h2>
             </div>
 
             {/*
-        CTA sits right-aligned on desktop via justify-between on parent.
-        On mobile it's below the title because flex-col stacks them.
-        sm:self-end keeps it bottom-aligned with the title on desktop.
-      */}
+              CTA sits right-aligned on desktop via justify-between on parent.
+              On mobile it's below the title because flex-col stacks them.
+              sm:self-end keeps it bottom-aligned with the title on desktop.
+            */}
             <Link
               to="/products/features"
               className="sm:self-end inline-flex items-center gap-2 bg-brand-dark hover:bg-brand-red text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-brand-red/20 hover:scale-[1.02] whitespace-nowrap"
             >
-              View All Features
+              {t("features.viewAllFeatures")}
               <ArrowRight size={15} />
             </Link>
           </div>
@@ -860,7 +868,7 @@ const HomePage: React.FC = () => {
               to="/products"
               className="inline-flex items-center gap-2 text-sm font-semibold text-brand-blue"
             >
-              Browse all products
+              {t("features.browseAllProducts")}
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -889,7 +897,7 @@ const HomePage: React.FC = () => {
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-6 h-0.5 bg-brand-red" />
                   <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                    For Professionals
+                    {t("architect.label")}
                   </span>
                 </div>
 
@@ -899,54 +907,54 @@ const HomePage: React.FC = () => {
                     <Compass className="text-brand-red" size={24} />
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-black text-white leading-tight">
-                    Architect's Corner.
+                    {t("architect.heading")}
                   </h2>
                 </div>
 
                 <p className="text-slate-400 leading-relaxed mb-8 max-w-md">
-                  WPC is the definitive next-generation solution for architects.
-                  It eliminates the structural and biological problems
-                  associated with plywood — enabling quality portfolios that
-                  last a lifetime.
+                  {t("architect.paragraph")}
                 </p>
 
                 {/*
-            Feature list — replaces the 2x2 grid of cards.
-            On mobile this is easier to read than a cramped 2-col grid.
-            Each row has a colored dot, bold title, and muted description.
-          */}
+                  Feature list — replaces the 2x2 grid of cards.
+                  On mobile this is easier to read than a cramped 2-col grid.
+                  Each row has a colored dot, bold title, and muted description.
+               */}
                 <div className="space-y-4 mb-10">
                   {[
                     {
-                      title: "Zero Warp",
-                      desc: "Structural stability guaranteed",
+                      titleKey: "architect.zeroWarpTitle",
+                      descKey: "architect.zeroWarpDesc",
                       color: "bg-brand-blue",
                     },
                     {
-                      title: "Anti-Pest",
-                      desc: "Full biological guard built-in",
+                      titleKey: "architect.antiPestTitle",
+                      descKey: "architect.antiPestDesc",
                       color: "bg-brand-red",
                     },
                     {
-                      title: "Moisture Proof",
-                      desc: "Marine grade water resistance",
+                      titleKey: "architect.moistureTitle",
+                      descKey: "architect.moistureDesc",
                       color: "bg-brand-blue",
                     },
                     {
-                      title: "Fire Safe",
-                      desc: "Class 1 certified, self-extinguishing",
+                      titleKey: "architect.fireSafeTitle",
+                      descKey: "architect.fireSafeDesc",
                       color: "bg-emerald-500",
                     },
                   ].map((item) => (
-                    <div key={item.title} className="flex items-center gap-4">
+                    <div
+                      key={item.titleKey}
+                      className="flex items-center gap-4"
+                    >
                       <div
                         className={`w-2 h-2 rounded-full shrink-0 ${item.color}`}
                       />
                       <span className="text-sm font-bold text-white w-28 shrink-0">
-                        {item.title}
+                        {t(item.titleKey)}
                       </span>
                       <span className="text-xs text-slate-500">
-                        {item.desc}
+                        {t(item.descKey)}
                       </span>
                     </div>
                   ))}
@@ -956,18 +964,19 @@ const HomePage: React.FC = () => {
                   to="/applications/kitchen"
                   className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20 w-fit"
                 >
-                  Explore Applications
+                  {t("architect.ctaExploreApplications")}
                   <ArrowRight size={15} />
                 </Link>
               </MotionDiv>
 
               {/*
-          RIGHT — image panel.
-          On mobile this stacks below the text.
-          On desktop it fills the right half of the card.
-          aspect-[4/3] gives it a fixed proportion on mobile.
-          lg:aspect-auto + lg:min-h-full fills the full height on desktop.
-        */}
+                RIGHT — image panel.
+                On mobile this stacks below the text.
+                On desktop it fills the right half of the card.
+                aspect-[4/3] gives it a fixed proportion on mobile.
+                lg:aspect-auto + lg:min-h-full fills the full height on desktop.
+            */}
+
               <MotionDiv
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -981,16 +990,16 @@ const HomePage: React.FC = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 {/*
-            Dark gradient overlay on image — left side fades to dark
-            so the image blends into the text panel on desktop.
-          */}
+                  Dark gradient overlay on image — left side fades to dark
+                  so the image blends into the text panel on desktop.
+              */}
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/60 via-transparent to-transparent lg:block hidden" />
                 <div className="absolute inset-0 bg-brand-blue/10" />
 
                 {/* Floating badge over image */}
                 <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3">
                   <span className="text-xs font-bold text-white uppercase tracking-wider">
-                    Trusted by Architects
+                    {t("architect.trustedBadge")}
                   </span>
                 </div>
               </MotionDiv>
@@ -1022,9 +1031,9 @@ const HomePage: React.FC = () => {
               </div>
 
               {/*
-          Floating stat card — bottom right corner overlapping image.
-          Same depth technique used in section 3.
-        */}
+               Floating stat card — bottom right corner overlapping image.
+               Same depth technique used in section 3.
+            */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 hidden md:block">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-brand-red/10 rounded-xl flex items-center justify-center">
@@ -1032,10 +1041,10 @@ const HomePage: React.FC = () => {
                   </div>
                   <div>
                     <span className="block text-sm font-black text-slate-900">
-                      Tool Compatible
+                      {t("carpenter.toolCompatibleTitle")}
                     </span>
                     <span className="text-[11px] text-slate-400 uppercase tracking-wide">
-                      All standard hardware
+                      {t("carpenter.toolCompatibleSub")}
                     </span>
                   </div>
                 </div>
@@ -1053,7 +1062,7 @@ const HomePage: React.FC = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  For Tradespeople
+                  {t("carpenter.label")}
                 </span>
               </div>
 
@@ -1063,43 +1072,42 @@ const HomePage: React.FC = () => {
                   <Hammer className="text-white" size={22} />
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-                  Carpenter's Corner.
+                  {t("carpenter.heading")}
                 </h2>
               </div>
 
               <p className="text-slate-500 leading-relaxed mb-8">
-                Revolutionizing the carpentry industry with materials designed
-                for easy assembling, permanent bonding, and faster installation.
-                Compatible with all traditional tools and hardware.
+                {t("carpenter.paragraph")}
               </p>
 
               {/*
-          2-col checklist grid.
-          On mobile: grid-cols-1 so each item has full width.
-          On sm+: grid-cols-2 for the two-column layout.
-          Each item: colored icon circle + label text.
-        */}
+                2-col checklist grid.
+                On mobile: grid-cols-1 so each item has full width.
+                On sm+: grid-cols-2 for the two-column layout.
+                Each item: colored icon circle + label text.
+            */}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                 {[
                   {
-                    label: "High Screw Holding",
+                    labelKey: "carpenter.highScrewLabel",
                     color: "bg-brand-red/10 text-brand-red",
                   },
                   {
-                    label: "Standard Tools Compatible",
+                    labelKey: "carpenter.standardToolsLabel",
                     color: "bg-brand-blue/10 text-brand-blue",
                   },
                   {
-                    label: "No Edge Banding Needs",
+                    labelKey: "carpenter.noEdgeBandingLabel",
                     color: "bg-brand-red/10 text-brand-red",
                   },
                   {
-                    label: "Faster Project Turnaround",
+                    labelKey: "carpenter.fasterTurnaroundLabel",
                     color: "bg-brand-blue/10 text-brand-blue",
                   },
                 ].map((item) => (
                   <div
-                    key={item.label}
+                    key={item.labelKey}
                     className="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100"
                   >
                     <div
@@ -1108,7 +1116,7 @@ const HomePage: React.FC = () => {
                       <CheckCircle2 size={14} />
                     </div>
                     <span className="text-xs font-semibold text-slate-700 uppercase tracking-wide">
-                      {item.label}
+                      {t(item.labelKey)}
                     </span>
                   </div>
                 ))}
@@ -1118,7 +1126,7 @@ const HomePage: React.FC = () => {
                 to="/products"
                 className="inline-flex items-center gap-2 bg-brand-dark hover:bg-brand-red text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-lg hover:scale-[1.02]"
               >
-                Read Tech Guides
+                {t("carpenter.ctaReadTechGuides")}
                 <ArrowRight size={15} />
               </Link>
             </MotionDiv>
@@ -1137,17 +1145,18 @@ const HomePage: React.FC = () => {
                 <div className="flex items-center gap-2 mb-8">
                   <div className="w-6 h-0.5 bg-brand-red" />
                   <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                    Get In Touch
+                    {t("contact.label")}
                   </span>
                 </div>
 
                 <h2 className="font-display text-3xl md:text-4xl font-black text-white leading-tight mb-4">
-                  Drop Us <span className="text-brand-red">a Line.</span>
+                  {t("contact.headingLine1")}{" "}
+                  <span className="text-brand-red">
+                    {t("contact.headingHighlight")}
+                  </span>
                 </h2>
                 <p className="text-slate-400 leading-relaxed mb-10">
-                  Our team responds within 24 hours. Reach out for product
-                  queries, bulk orders, distributor inquiries, or technical
-                  support.
+                  {t("contact.intro")}
                 </p>
 
                 {/* Contact details */}
@@ -1155,28 +1164,28 @@ const HomePage: React.FC = () => {
                   {[
                     {
                       icon: <Phone size={16} />,
-                      label: "Call Us",
+                      labelKey: "contact.callUsLabel",
                       value: "+91 99303 49472",
                       href: "tel:+919930349472",
                       color: "bg-brand-red/10 text-brand-red",
                     },
                     {
                       icon: <Mail size={16} />,
-                      label: "Email Us",
+                      labelKey: "contact.emailUsLabel",
                       value: "info@fixoboard.com",
                       href: "mailto:info@fixoboard.com",
                       color: "bg-brand-blue/10 text-brand-blue",
                     },
                     {
                       icon: <MapPin size={16} />,
-                      label: "Visit Us",
+                      labelKey: "contact.visitUsLabel",
                       value: "Kandivali (West), Mumbai – 400067",
                       href: "#",
                       color: "bg-brand-red/10 text-brand-red",
                     },
                   ].map((item) => (
                     <a
-                      key={item.label}
+                      key={item.labelKey}
                       href={item.href}
                       className="flex items-center gap-4 group"
                     >
@@ -1187,7 +1196,7 @@ const HomePage: React.FC = () => {
                       </div>
                       <div>
                         <span className="block text-[11px] text-slate-500 uppercase tracking-wider mb-0.5">
-                          {item.label}
+                          {t(item.labelKey)}
                         </span>
                         <span className="text-sm text-slate-300 group-hover:text-white transition-colors font-medium">
                           {item.value}
@@ -1204,7 +1213,7 @@ const HomePage: React.FC = () => {
         */}
               <div className="border-t border-white/10 pt-8">
                 <p className="text-[11px] text-slate-500 uppercase tracking-widest mb-3">
-                  Our Locations
+                  {t("contact.ourLocationsLabel")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Mumbai", "Dubai", "Silvassa"].map((city) => (
@@ -1231,20 +1240,20 @@ const HomePage: React.FC = () => {
                     <CheckCircle2 className="text-emerald-600" size={32} />
                   </div>
                   <h3 className="font-display text-2xl font-black text-slate-900 mb-2">
-                    Message Received!
+                    {t("contact.successTitle")}
                   </h3>
                   <p className="text-slate-500 text-sm">
-                    Thank you for reaching out. We will get back to you shortly.
+                    {t("contact.successDesc")}
                   </p>
                 </MotionDiv>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-5">
                   <div>
                     <h3 className="font-display text-xl font-black text-slate-900 mb-1">
-                      Send an Inquiry
+                      {t("contact.formTitle")}
                     </h3>
                     <p className="text-slate-400 text-sm mb-6">
-                      Fill in the form and we'll get back to you.
+                      {t("contact.formSubtitle")}
                     </p>
                   </div>
 
@@ -1259,23 +1268,23 @@ const HomePage: React.FC = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
-                        Full Name
+                        {t("contact.fullNameLabel")}
                       </label>
                       <input
                         required
                         type="text"
-                        placeholder="John Smith"
+                        placeholder={t("contact.namePlaceholder")}
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
-                        Email Address
+                        {t("contact.emailAddressLabel")}
                       </label>
                       <input
                         required
                         type="email"
-                        placeholder="john@company.com"
+                        placeholder={t("contact.emailPlaceholder")}
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
                       />
                     </div>
@@ -1283,23 +1292,23 @@ const HomePage: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
-                      Phone Number
+                      {t("contact.phoneNumberLabel")}
                     </label>
                     <input
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder={t("contact.phonePlaceholder")}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">
-                      Message
+                      {t("contact.messageLabel")}
                     </label>
                     <textarea
                       required
                       rows={4}
-                      placeholder="Tell us about your project or inquiry..."
+                      placeholder={t("contact.messagePlaceholder")}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none resize-none"
                     />
                   </div>
@@ -1309,7 +1318,7 @@ const HomePage: React.FC = () => {
                       type="submit"
                       className="w-full bg-brand-red hover:bg-brand-red-dark text-white px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
                     >
-                      Submit Inquiry
+                      {t("contact.submitInquiry")}
                     </button>
                   </div>
                 </form>
