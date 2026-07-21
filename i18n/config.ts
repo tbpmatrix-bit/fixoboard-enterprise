@@ -19,15 +19,18 @@ import frHome from "./locales/fr/home.json";
 import enAbout from "./locales/en/about.json";
 import esAbout from "./locales/es/about.json";
 import frAbout from "./locales/fr/about.json";
+import enProducts from "./locales/en/products.json";
+import esProducts from "./locales/es/products.json";
+import frProducts from "./locales/fr/products.json";
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      en: { common: enCommon, home: enHome, about: enAbout },
-       es: { common: esCommon, home: esHome, about: esAbout },
-  fr: { common: frCommon, home: frHome, about: frAbout },
+      en: { common: enCommon, home: enHome, about: enAbout, products: enProducts },
+       es: { common: esCommon, home: esHome, about: esAbout, products: esProducts },
+  fr: { common: frCommon, home: frHome, about: frAbout, products: frProducts },
       ar: { common: arCommon },
       zh: { common: zhCommon },
     },

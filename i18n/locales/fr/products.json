@@ -1,0 +1,10 @@
+{
+  "catalog": {
+    "label": "Catalogue Produits",
+    "headingLine1": "Notre Gamme",
+    "headingLine2": "de Produits.",
+    "description": "Découvrez notre gamme complète de matériaux PVC et WPC haute performance, conçus pour l'intégrité structurelle et la durabilité environnementale.",
+    "searchPlaceholder": "Rechercher un produit ou une spécification...",
+    "filter": "Filtrer"
+  }
+}

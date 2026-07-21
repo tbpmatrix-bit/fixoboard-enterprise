@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { products } from "../../data/products";
 import ProductCard from "../../components/product/ProductCard";
 import { Filter, Search } from "lucide-react";
@@ -7,6 +8,7 @@ import { Filter, Search } from "lucide-react";
 const MotionDiv = motion.div as any;
 
 const ProductsPage: React.FC = () => {
+  const { t } = useTranslation("products");
   const [query, setQuery] = useState("");
 
   const filtered = products.filter((p) =>
@@ -27,22 +29,20 @@ const ProductsPage: React.FC = () => {
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="w-6 h-0.5 bg-brand-red" />
               <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                Product Catalog
+                {t("catalog.label")}
               </span>
               <div className="w-6 h-0.5 bg-brand-red" />
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-2">
-              Our Product
+              {t("catalog.headingLine1")}
             </h1>
             <h1 className="font-display text-4xl md:text-5xl font-black text-brand-red leading-tight mb-6">
-              Range.
+              {t("catalog.headingLine2")}
             </h1>
 
             <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
-              Explore our comprehensive range of high-performance PVC and WPC
-              materials engineered for structural integrity and environmental
-              sustainability.
+              {t("catalog.description")}
             </p>
           </MotionDiv>
 
@@ -62,13 +62,13 @@ const ProductsPage: React.FC = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products or specs..."
+                 placeholder={t("catalog.searchPlaceholder")}
                 className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:ring-2 focus:ring-brand-blue focus:bg-white/15 transition-all outline-none text-sm"
               />
             </div>
             <button className="bg-white/10 border border-white/10 px-5 py-3.5 rounded-xl text-white hover:bg-white/20 transition-all flex items-center gap-2 text-sm font-semibold">
               <Filter size={16} />
-              <span className="hidden sm:inline">Filter</span>
+              <span className="hidden sm:inline">{t("catalog.filter")}</span>
             </button>
           </MotionDiv>
         </div>

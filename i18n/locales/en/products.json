@@ -1,0 +1,10 @@
+{
+  "catalog": {
+    "label": "Product Catalog",
+    "headingLine1": "Our Product",
+    "headingLine2": "Range.",
+    "description": "Explore our comprehensive range of high-performance PVC and WPC materials engineered for structural integrity and environmental sustainability.",
+    "searchPlaceholder": "Search products or specs...",
+    "filter": "Filter"
+  }
+}
