@@ -8,50 +8,137 @@
     "filter": "Filtrar"
   },
   "features": {
-  "label": "Centro de Datos Técnicos",
-  "headingLine1": "Por Qué Elegir",
-  "headingLine2": "¿Fixoboard?",
-  "description": "Métricas de rendimiento industrial que explican por qué Fixoboard es el sustituto definitivo de la madera contrachapada y el MDF tradicionales.",
-  "groups": {
-    "coreResilience": {
-      "title": "Resistencia Fundamental",
-      "termiteProof": { "title": "A Prueba de Termitas", "desc": "Naturalmente resistente a la descomposición biológica y a todo tipo de plagas, sin tratamientos químicos tóxicos." },
-      "waterProof": { "title": "Impermeable", "desc": "Garantiza cero síntomas de delaminación, hinchazón o daños por agua, incluso si se sumerge." },
-      "fireResistant": { "title": "Resistente al Fuego", "desc": "Propiedades autoextinguibles que garantizan la seguridad estructural en zonas de alto riesgo como cocinas." }
+    "label": "Centro de Datos Técnicos",
+    "headingLine1": "Por Qué Elegir",
+    "headingLine2": "¿Fixoboard?",
+    "description": "Métricas de rendimiento industrial que explican por qué Fixoboard es el sustituto definitivo de la madera contrachapada y el MDF tradicionales.",
+    "groups": {
+      "coreResilience": {
+        "title": "Resistencia Fundamental",
+        "termiteProof": {
+          "title": "A Prueba de Termitas",
+          "desc": "Naturalmente resistente a la descomposición biológica y a todo tipo de plagas, sin tratamientos químicos tóxicos."
+        },
+        "waterProof": {
+          "title": "Impermeable",
+          "desc": "Garantiza cero síntomas de delaminación, hinchazón o daños por agua, incluso si se sumerge."
+        },
+        "fireResistant": {
+          "title": "Resistente al Fuego",
+          "desc": "Propiedades autoextinguibles que garantizan la seguridad estructural en zonas de alto riesgo como cocinas."
+        }
+      },
+      "healthSafety": {
+        "title": "Salud y Seguridad",
+        "leadFree": {
+          "title": "100% Libre de Plomo",
+          "desc": "El contenido cero de plomo previene daños a los riñones, el hígado y el sistema nervioso. Esencial para el sector salud."
+        },
+        "nonToxic": {
+          "title": "No Tóxico / Cero Emisiones",
+          "desc": "Tableros libres de COV que mantienen la calidad del aire interior. 100% reciclables y ecológicos."
+        },
+        "antiBacterial": {
+          "title": "Antibacteriano",
+          "desc": "Superficie antifúngica e higiénica, fácil de desinfectar, ideal para cocinas y hospitales."
+        }
+      },
+      "industrialPerformance": {
+        "title": "Rendimiento Industrial",
+        "uvChemical": {
+          "title": "Resistente a UV y Químicos",
+          "desc": "Resistente a ácidos suaves, álcalis y luz solar. Ideal para uso interior y exterior."
+        },
+        "noShrinkage": {
+          "title": "Sin Contracción ni Hinchazón",
+          "desc": "La alta estabilidad dimensional garantiza que los tableros no se deformen ni se expandan bajo distintas condiciones climáticas."
+        },
+        "carpenterFriendly": {
+          "title": "Apto para Carpinteros",
+          "desc": "Diseñado para un agarre de tornillo superior. Compatible con herramientas de carpintería estándar."
+        }
+      }
     },
-    "healthSafety": {
-      "title": "Salud y Seguridad",
-      "leadFree": { "title": "100% Libre de Plomo", "desc": "El contenido cero de plomo previene daños a los riñones, el hígado y el sistema nervioso. Esencial para el sector salud." },
-      "nonToxic": { "title": "No Tóxico / Cero Emisiones", "desc": "Tableros libres de COV que mantienen la calidad del aire interior. 100% reciclables y ecológicos." },
-      "antiBacterial": { "title": "Antibacteriano", "desc": "Superficie antifúngica e higiénica, fácil de desinfectar, ideal para cocinas y hospitales." }
-    },
-    "industrialPerformance": {
-      "title": "Rendimiento Industrial",
-      "uvChemical": { "title": "Resistente a UV y Químicos", "desc": "Resistente a ácidos suaves, álcalis y luz solar. Ideal para uso interior y exterior." },
-      "noShrinkage": { "title": "Sin Contracción ni Hinchazón", "desc": "La alta estabilidad dimensional garantiza que los tableros no se deformen ni se expandan bajo distintas condiciones climáticas." },
-      "carpenterFriendly": { "title": "Apto para Carpinteros", "desc": "Diseñado para un agarre de tornillo superior. Compatible con herramientas de carpintería estándar." }
+    "comparison": {
+      "label": "Análisis Técnico",
+      "headingLine1": "Comparación de",
+      "headingLine2": "Rendimiento.",
+      "table": {
+        "feature": "Característica",
+        "plywood": "Contrachapado",
+        "mdf": "MDF",
+        "particleBoard": "Tablero de Partículas",
+        "fixoboard": "FixoBoard"
+      },
+      "rows": {
+        "termiteProof": "A Prueba de Termitas",
+        "waterProof": "100% Impermeable",
+        "leadFree": "Libre de Plomo / No Tóxico",
+        "fireRetardant": "Retardante de Fuego",
+        "antiFungal": "Antifúngico / Antibacteriano",
+        "hardness": "Dureza Shore D (50-80)",
+        "recyclable": "100% Reciclable"
+      }
     }
   },
-  "comparison": {
-    "label": "Análisis Técnico",
-    "headingLine1": "Comparación de",
-    "headingLine2": "Rendimiento.",
-    "table": {
-      "feature": "Característica",
-      "plywood": "Contrachapado",
-      "mdf": "MDF",
-      "particleBoard": "Tablero de Partículas",
-      "fixoboard": "FixoBoard"
+  "shared": {
+    "breadcrumb": { "home": "Inicio", "products": "Productos" },
+    "cta": {
+      "requestPricing": "Solicitar Precio",
+      "downloadCatalog": "Descargar Catálogo"
     },
-     "rows": {
-      "termiteProof": "A Prueba de Termitas",
-      "waterProof": "100% Impermeable",
-      "leadFree": "Libre de Plomo / No Tóxico",
-      "fireRetardant": "Retardante de Fuego",
-      "antiFungal": "Antifúngico / Antibacteriano",
-      "hardness": "Dureza Shore D (50-80)",
-      "recyclable": "100% Reciclable"
-     }
+    "leadFreeBadge": {
+      "title": "Certificado Libre de Plomo",
+      "desc": "Seguro para áreas de salud y preparación de alimentos"
+    },
+    "comparison": {
+      "label": "Análisis de Rendimiento",
+      "headingLine1": "Rendimiento",
+      "headingLine2": "Comparativo."
+    },
+    "technicalData": {
+      "label": "Datos Técnicos",
+      "customSizesLabel": "Tamaños Personalizados",
+      "customSizesDesc": "Ofrecemos corte personalizado y producción de espesores según los requisitos de cada proyecto."
+    },
+    "finishes": {
+      "label": "Opciones de Acabado",
+      "headingLine1": "Infinitas Posibilidades",
+      "headingLine2": "de Acabado.",
+      "description": "La superficie de FixoBoard es el lienzo perfecto para todas las técnicas de acabado tradicionales y modernas.",
+      "items": {
+        "puGloss": "PU Brillante / Mate",
+        "directPaint": "Pintura Directa",
+        "digitalPrinting": "Impresión Digital",
+        "pvcFoil": "Lámina / Laminado de PVC"
+      }
+    },
+    "specLabels": {
+      "densityRange": "Rango de Densidad",
+      "shoreHardness": "Dureza Shore",
+      "thickness": "Espesor",
+      "standardSize": "Tamaño Estándar",
+      "standardSizes": "Tamaños Estándar",
+      "leadContent": "Contenido de Plomo",
+      "construction": "Construcción",
+      "designTypes": "Tipos de Diseño",
+      "finish": "Acabado",
+      "durability": "Durabilidad",
+      "weight": "Peso",
+      "application": "Aplicación",
+      "surface": "Superficie",
+      "core": "Núcleo",
+      "edges": "Bordes",
+      "structure": "Estructura",
+      "screwHolding": "Agarre de Tornillo",
+      "weathering": "Resistencia a la Intemperie"
+    }
+  },
+  "pvcWpcPly": {
+    "breadcrumbCurrent": "PVC / WPC Ply",
+    "sectionLabel": "Tableros de Grado Industrial",
+    "headingLine1": "PVC / WPC",
+    "headingLine2": "Ply.",
+    "description": "Un tablero ecológico de nueva generación, altamente duradero y con características superiores a la madera contrachapada tradicional. Resistente a la intemperie, la humedad, el fuego y las termitas."
   }
-}
 }

@@ -8,50 +8,137 @@
     "filter": "Filtrer"
   },
   "features": {
-  "label": "Centre de Données Techniques",
-  "headingLine1": "Pourquoi Choisir",
-  "headingLine2": "Fixoboard ?",
-  "description": "Des indicateurs de performance industrielle qui expliquent pourquoi Fixoboard est le substitut définitif au contreplaqué et au MDF traditionnels.",
-  "groups": {
-    "coreResilience": {
-      "title": "Résistance Fondamentale",
-      "termiteProof": { "title": "Anti-Termites", "desc": "Naturellement résistant à la dégradation biologique et à tous types de nuisibles, sans traitement chimique toxique." },
-      "waterProof": { "title": "Imperméable", "desc": "Garantit l'absence totale de délaminage, de gonflement ou de dégâts des eaux, même en cas d'immersion." },
-      "fireResistant": { "title": "Résistant au Feu", "desc": "Propriétés auto-extinguibles assurant la sécurité structurelle dans les zones à haut risque comme les cuisines." }
+    "label": "Centre de Données Techniques",
+    "headingLine1": "Pourquoi Choisir",
+    "headingLine2": "Fixoboard ?",
+    "description": "Des indicateurs de performance industrielle qui expliquent pourquoi Fixoboard est le substitut définitif au contreplaqué et au MDF traditionnels.",
+    "groups": {
+      "coreResilience": {
+        "title": "Résistance Fondamentale",
+        "termiteProof": {
+          "title": "Anti-Termites",
+          "desc": "Naturellement résistant à la dégradation biologique et à tous types de nuisibles, sans traitement chimique toxique."
+        },
+        "waterProof": {
+          "title": "Imperméable",
+          "desc": "Garantit l'absence totale de délaminage, de gonflement ou de dégâts des eaux, même en cas d'immersion."
+        },
+        "fireResistant": {
+          "title": "Résistant au Feu",
+          "desc": "Propriétés auto-extinguibles assurant la sécurité structurelle dans les zones à haut risque comme les cuisines."
+        }
+      },
+      "healthSafety": {
+        "title": "Santé et Sécurité",
+        "leadFree": {
+          "title": "100 % Sans Plomb",
+          "desc": "L'absence totale de plomb prévient les dommages aux reins, au foie et au système nerveux. Essentiel pour le secteur de la santé."
+        },
+        "nonToxic": {
+          "title": "Non Toxique / Zéro Émission",
+          "desc": "Panneaux sans COV préservant la qualité de l'air intérieur. 100 % recyclables et écologiques."
+        },
+        "antiBacterial": {
+          "title": "Antibactérien",
+          "desc": "Surface antifongique et hygiénique, facile à désinfecter, idéale pour les cuisines et les hôpitaux."
+        }
+      },
+      "industrialPerformance": {
+        "title": "Performance Industrielle",
+        "uvChemical": {
+          "title": "Résistant aux UV et aux Produits Chimiques",
+          "desc": "Résistant aux acides doux, aux alcalis et au soleil. Idéal pour un usage intérieur comme extérieur."
+        },
+        "noShrinkage": {
+          "title": "Sans Rétrécissement ni Gonflement",
+          "desc": "Une grande stabilité dimensionnelle garantit que les panneaux ne se déforment ni ne se dilatent selon les conditions climatiques."
+        },
+        "carpenterFriendly": {
+          "title": "Adapté aux Menuisiers",
+          "desc": "Conçu pour une tenue de vis supérieure. Compatible avec les outils de menuiserie standards."
+        }
+      }
     },
-    "healthSafety": {
-      "title": "Santé et Sécurité",
-      "leadFree": { "title": "100 % Sans Plomb", "desc": "L'absence totale de plomb prévient les dommages aux reins, au foie et au système nerveux. Essentiel pour le secteur de la santé." },
-      "nonToxic": { "title": "Non Toxique / Zéro Émission", "desc": "Panneaux sans COV préservant la qualité de l'air intérieur. 100 % recyclables et écologiques." },
-      "antiBacterial": { "title": "Antibactérien", "desc": "Surface antifongique et hygiénique, facile à désinfecter, idéale pour les cuisines et les hôpitaux." }
-    },
-    "industrialPerformance": {
-      "title": "Performance Industrielle",
-      "uvChemical": { "title": "Résistant aux UV et aux Produits Chimiques", "desc": "Résistant aux acides doux, aux alcalis et au soleil. Idéal pour un usage intérieur comme extérieur." },
-      "noShrinkage": { "title": "Sans Rétrécissement ni Gonflement", "desc": "Une grande stabilité dimensionnelle garantit que les panneaux ne se déforment ni ne se dilatent selon les conditions climatiques." },
-      "carpenterFriendly": { "title": "Adapté aux Menuisiers", "desc": "Conçu pour une tenue de vis supérieure. Compatible avec les outils de menuiserie standards." }
+    "comparison": {
+      "label": "Analyse Technique",
+      "headingLine1": "Comparaison des",
+      "headingLine2": "Performances.",
+      "table": {
+        "feature": "Caractéristique",
+        "plywood": "Contreplaqué",
+        "mdf": "MDF",
+        "particleBoard": "Panneau de Particules",
+        "fixoboard": "FixoBoard"
+      },
+      "rows": {
+        "termiteProof": "Anti-Termites",
+        "waterProof": "100 % Imperméable",
+        "leadFree": "Sans Plomb / Non Toxique",
+        "fireRetardant": "Retardateur de Flamme",
+        "antiFungal": "Antifongique / Antibactérien",
+        "hardness": "Dureté Shore D (50-80)",
+        "recyclable": "100 % Recyclable"
+      }
     }
   },
-  "comparison": {
-    "label": "Analyse Technique",
-    "headingLine1": "Comparaison des",
-    "headingLine2": "Performances.",
-    "table": {
-      "feature": "Caractéristique",
-      "plywood": "Contreplaqué",
-      "mdf": "MDF",
-      "particleBoard": "Panneau de Particules",
-      "fixoboard": "FixoBoard"
+  "shared": {
+    "breadcrumb": { "home": "Accueil", "products": "Produits" },
+    "cta": {
+      "requestPricing": "Demander un Devis",
+      "downloadCatalog": "Télécharger le Catalogue"
     },
-    "rows": {
-      "termiteProof": "Anti-Termites",
-      "waterProof": "100 % Imperméable",
-      "leadFree": "Sans Plomb / Non Toxique",
-      "fireRetardant": "Retardateur de Flamme",
-      "antiFungal": "Antifongique / Antibactérien",
-      "hardness": "Dureté Shore D (50-80)",
-      "recyclable": "100 % Recyclable"
-     }
+    "leadFreeBadge": {
+      "title": "Certifié Sans Plomb",
+      "desc": "Sûr pour les espaces de santé et de préparation alimentaire"
+    },
+    "comparison": {
+      "label": "Analyse de Performance",
+      "headingLine1": "Performance",
+      "headingLine2": "Comparative."
+    },
+    "technicalData": {
+      "label": "Données Techniques",
+      "customSizesLabel": "Dimensions Personnalisées",
+      "customSizesDesc": "Nous proposons la découpe sur mesure et la production d'épaisseurs spécifiques selon les besoins du projet."
+    },
+    "finishes": {
+      "label": "Options de Finition",
+      "headingLine1": "Des Finitions",
+      "headingLine2": "Infinies.",
+      "description": "La surface de FixoBoard est une toile parfaite pour toutes les techniques de finition, traditionnelles comme modernes.",
+      "items": {
+        "puGloss": "PU Brillant / Mat",
+        "directPaint": "Peinture Directe",
+        "digitalPrinting": "Impression Numérique",
+        "pvcFoil": "Feuille / Stratifié PVC"
+      }
+    },
+    "specLabels": {
+      "densityRange": "Plage de Densité",
+      "shoreHardness": "Dureté Shore",
+      "thickness": "Épaisseur",
+      "standardSize": "Taille Standard",
+      "standardSizes": "Tailles Standards",
+      "leadContent": "Teneur en Plomb",
+      "construction": "Construction",
+      "designTypes": "Types de Design",
+      "finish": "Finition",
+      "durability": "Durabilité",
+      "weight": "Poids",
+      "application": "Application",
+      "surface": "Surface",
+      "core": "Âme",
+      "edges": "Chants",
+      "structure": "Structure",
+      "screwHolding": "Tenue de Vis",
+      "weathering": "Résistance aux Intempéries"
+    }
+  },
+  "pvcWpcPly": {
+    "breadcrumbCurrent": "PVC / WPC Ply",
+    "sectionLabel": "Panneaux de Qualité Industrielle",
+    "headingLine1": "PVC / WPC",
+    "headingLine2": "Ply.",
+    "description": "Un panneau écologique de nouvelle génération, extrêmement durable, avec des caractéristiques supérieures au contreplaqué traditionnel. Résistant aux intempéries, à l'humidité, au feu et aux termites."
   }
-}
 }
