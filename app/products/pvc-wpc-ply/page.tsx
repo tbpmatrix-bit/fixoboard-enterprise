@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { products } from "../../../data/products";
 import ProductComparisonTable from "../../../components/product/ProductComparisonTable";
 import {
@@ -17,6 +18,7 @@ import {
 const MotionDiv = motion.div as any;
 
 const PVCWPCPage: React.FC = () => {
+  const { t } = useTranslation("products");
   const product = products.find((p) => p.slug === "pvc-wpc-ply")!;
 
   return (
@@ -33,38 +35,38 @@ const PVCWPCPage: React.FC = () => {
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 text-slate-400 text-xs mb-6">
                 <Link to="/" className="hover:text-white transition-colors">
-                  Home
+                  {t("shared.breadcrumb.home")}
                 </Link>
                 <ChevronRight size={12} />
                 <Link
                   to="/products"
                   className="hover:text-white transition-colors"
                 >
-                  Products
+                  {t("shared.breadcrumb.products")}
                 </Link>
                 <ChevronRight size={12} />
-                <span className="text-white">PVC / WPC Ply</span>
+                <span className="text-white">
+                  {t("pvcWpcPly.breadcrumbCurrent")}
+                </span>
               </div>
 
               {/* Section label */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Industrial Grade Boards
+                  {t("pvcWpcPly.sectionLabel")}
                 </span>
               </div>
 
               <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-2">
-                PVC / WPC
+                {t("pvcWpcPly.headingLine1")}
               </h1>
               <h1 className="font-display text-4xl md:text-5xl font-black text-brand-red leading-tight mb-6">
-                Ply.
+                {t("pvcWpcPly.headingLine2")}
               </h1>
 
               <p className="text-slate-400 text-lg leading-relaxed mb-10">
-                A new generation eco-friendly board — highly durable with
-                features superior to traditional plywood. Resistant to weather,
-                moisture, fire, and termites.
+                {t("pvcWpcPly.description")}
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -72,11 +74,11 @@ const PVCWPCPage: React.FC = () => {
                   to="/contact"
                   className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
                 >
-                  Request Pricing <ArrowRight size={15} />
+                  {t("shared.cta.requestPricing")} <ArrowRight size={15} />
                 </Link>
                 <button className="inline-flex items-center gap-2 bg-white/10 border border-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all">
                   <FileText size={15} />
-                  Download Catalog
+                  {t("shared.cta.downloadCatalog")}
                 </button>
               </div>
             </MotionDiv>
@@ -102,11 +104,11 @@ const PVCWPCPage: React.FC = () => {
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2 h-2 bg-green-500 rounded-full" />
                   <span className="font-black text-slate-900 text-sm">
-                    Lead Free Certified
+                    {t("shared.leadFreeBadge.title")}
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  Safe for healthcare & food prep areas
+                  {t("shared.leadFreeBadge.desc")}
                 </p>
               </div>
             </MotionDiv>
@@ -123,14 +125,14 @@ const PVCWPCPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-blue" />
                 <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
-                  Performance Analysis
+                  {t("shared.comparison.label")}
                 </span>
               </div>
               <h2 className="font-display text-3xl font-black text-slate-900 leading-tight mb-2">
-                Comparative
+                {t("shared.comparison.headingLine1")}
               </h2>
               <h2 className="font-display text-3xl font-black text-brand-blue leading-tight mb-10">
-                Performance.
+                {t("shared.comparison.headingLine2")}
               </h2>
               <ProductComparisonTable />
             </div>
@@ -146,7 +148,7 @@ const PVCWPCPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-8">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Technical Data
+                  {t("shared.technicalData.label")}
                 </span>
               </div>
 
@@ -154,7 +156,7 @@ const PVCWPCPage: React.FC = () => {
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div key={key} className="border-b border-white/10 pb-4">
                     <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest block mb-1">
-                      {key}
+                      {t(`shared.specLabels.${key}`)}
                     </span>
                     <span className="text-white font-semibold text-sm">
                       {value}
@@ -167,12 +169,11 @@ const PVCWPCPage: React.FC = () => {
                 <div className="flex items-center gap-2 mb-2">
                   <CheckCircle2 size={14} className="text-brand-blue" />
                   <span className="text-brand-blue text-[10px] font-semibold uppercase tracking-widest">
-                    Custom Sizes
+                    {t("shared.technicalData.customSizesLabel")}
                   </span>
                 </div>
                 <p className="text-slate-300 text-xs leading-relaxed">
-                  We offer custom cutting and thickness production for
-                  project-specific requirements.
+                  {t("shared.technicalData.customSizesDesc")}
                 </p>
               </div>
             </MotionDiv>
@@ -186,32 +187,31 @@ const PVCWPCPage: React.FC = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-6 h-0.5 bg-brand-red" />
             <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-              Finishing Options
+              {t("shared.finishes.label")}
             </span>
             <div className="w-6 h-0.5 bg-brand-red" />
           </div>
 
           <h2 className="font-display text-3xl md:text-4xl font-black text-slate-900 leading-tight text-center mb-2">
-            Infinite Finish
+            {t("shared.finishes.headingLine1")}
           </h2>
           <h2 className="font-display text-3xl md:text-4xl font-black text-brand-red leading-tight text-center mb-6">
-            Possibilities.
+            {t("shared.finishes.headingLine2")}
           </h2>
 
           <p className="text-slate-500 max-w-2xl mx-auto text-center leading-relaxed mb-16">
-            FixoBoard surface acts as a perfect canvas for all traditional and
-            modern finishing techniques.
+            {t("shared.finishes.description")}
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: "PU Gloss / Matt", icon: <Sparkles size={24} /> },
-              { name: "Direct Paint", icon: <Hammer size={24} /> },
-              { name: "Digital Printing", icon: <Layers size={24} /> },
-              { name: "PVC Foil / Laminate", icon: <ShieldCheck size={24} /> },
+              { key: "puGloss", icon: <Sparkles size={24} /> },
+              { key: "directPaint", icon: <Hammer size={24} /> },
+              { key: "digitalPrinting", icon: <Layers size={24} /> },
+              { key: "pvcFoil", icon: <ShieldCheck size={24} /> },
             ].map((fin, idx) => (
               <MotionDiv
-                key={idx}
+                key={fin.key}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -222,7 +222,7 @@ const PVCWPCPage: React.FC = () => {
                   {fin.icon}
                 </div>
                 <span className="font-display font-black text-slate-900 text-sm">
-                  {fin.name}
+                  {t(`shared.finishes.items.${fin.key}`)}
                 </span>
               </MotionDiv>
             ))}

@@ -6,12 +6,12 @@
     "description": "Explore our comprehensive range of high-performance PVC and WPC materials engineered for structural integrity and environmental sustainability.",
     "searchPlaceholder": "Search products or specs...",
     "filter": "Filter"
- },
+  },
   "features": {
     "label": "Technical Data Hub",
     "headingLine1": "Why Choose",
-   "headingLine2": "Fixoboard?",
-   "description": "Industrial performance metrics that explain why Fixoboard is the definitive substitute for traditional plywood and MDF.",
+    "headingLine2": "Fixoboard?",
+    "description": "Industrial performance metrics that explain why Fixoboard is the definitive substitute for traditional plywood and MDF.",
     "groups": {
       "coreResilience": {
         "title": "Core Resilience",
@@ -50,11 +50,11 @@
           "desc": "Resistant to mild acids, alkalis, and sunlight. Ideal for both interior and exterior use."
         },
         "noShrinkage": {
-         "title": "No Shrinkage or Swelling",
+          "title": "No Shrinkage or Swelling",
           "desc": "High dimensional stability ensures boards do not warp or expand under varying weather conditions."
         },
         "carpenterFriendly": {
-         "title": "Carpenter Friendly",
+          "title": "Carpenter Friendly",
           "desc": "Engineered for superior screw-holding. Compatible with standard woodworking tools."
         }
       }
@@ -63,22 +63,85 @@
       "label": "Technical Analysis",
       "headingLine1": "Performance",
       "headingLine2": "Comparison.",
-    "table": {
-      "feature": "Feature",
-      "plywood": "Plywood",
-      "mdf": "MDF",
-      "particleBoard": "Particle Board",
-      "fixoboard": "FixoBoard"
+      "table": {
+        "feature": "Feature",
+        "plywood": "Plywood",
+        "mdf": "MDF",
+        "particleBoard": "Particle Board",
+        "fixoboard": "FixoBoard"
+      },
+      "rows": {
+        "termiteProof": "Termite Proof",
+        "waterProof": "100% Water Proof",
+        "leadFree": "Lead Free / Non-Toxic",
+        "fireRetardant": "Fire Retardant",
+        "antiFungal": "Anti-Fungal / Bacterial",
+        "hardness": "Shore D Hardness (50-80)",
+        "recyclable": "100% Recyclable"
+      }
+    }
+  },
+  "shared": {
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
     },
-     "rows": {
-      "termiteProof": "Termite Proof",
-      "waterProof": "100% Water Proof",
-      "leadFree": "Lead Free / Non-Toxic",
-      "fireRetardant": "Fire Retardant",
-      "antiFungal": "Anti-Fungal / Bacterial",
-      "hardness": "Shore D Hardness (50-80)",
-      "recyclable": "100% Recyclable"
-     }
+    "cta": {
+      "requestPricing": "Request Pricing",
+      "downloadCatalog": "Download Catalog"
+    },
+    "leadFreeBadge": {
+      "title": "Lead Free Certified",
+      "desc": "Safe for healthcare & food prep areas"
+    },
+    "comparison": {
+      "label": "Performance Analysis",
+      "headingLine1": "Comparative",
+      "headingLine2": "Performance."
+    },
+    "technicalData": {
+      "label": "Technical Data",
+      "customSizesLabel": "Custom Sizes",
+      "customSizesDesc": "We offer custom cutting and thickness production for project-specific requirements."
+    },
+    "finishes": {
+      "label": "Finishing Options",
+      "headingLine1": "Infinite Finish",
+      "headingLine2": "Possibilities.",
+      "description": "FixoBoard surface acts as a perfect canvas for all traditional and modern finishing techniques.",
+      "items": {
+        "puGloss": "PU Gloss / Matt",
+        "directPaint": "Direct Paint",
+        "digitalPrinting": "Digital Printing",
+        "pvcFoil": "PVC Foil / Laminate"
+      }
+    },
+    "specLabels": {
+      "densityRange": "Density Range",
+      "shoreHardness": "Shore Hardness",
+      "thickness": "Thickness",
+      "standardSize": "Standard Size",
+      "standardSizes": "Standard Sizes",
+      "leadContent": "Lead Content",
+      "construction": "Construction",
+      "designTypes": "Design Types",
+      "finish": "Finish",
+      "durability": "Durability",
+      "weight": "Weight",
+      "application": "Application",
+      "surface": "Surface",
+      "core": "Core",
+      "edges": "Edges",
+      "structure": "Structure",
+      "screwHolding": "Screw Holding",
+      "weathering": "Weathering"
+    }
+  },
+  "pvcWpcPly": {
+    "breadcrumbCurrent": "PVC / WPC Ply",
+    "sectionLabel": "Industrial Grade Boards",
+    "headingLine1": "PVC / WPC",
+    "headingLine2": "Ply.",
+    "description": "A new generation eco-friendly board — highly durable with features superior to traditional plywood. Resistant to weather, moisture, fire, and termites."
   }
-}
 }

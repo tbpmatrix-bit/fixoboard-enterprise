@@ -28,9 +28,24 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { common: enCommon, home: enHome, about: enAbout, products: enProducts },
-       es: { common: esCommon, home: esHome, about: esAbout, products: esProducts },
-  fr: { common: frCommon, home: frHome, about: frAbout, products: frProducts },
+      en: {
+        common: enCommon,
+        home: enHome,
+        about: enAbout,
+        products: enProducts,
+      },
+      es: {
+        common: esCommon,
+        home: esHome,
+        about: esAbout,
+        products: esProducts,
+      },
+      fr: {
+        common: frCommon,
+        home: frHome,
+        about: frAbout,
+        products: frProducts,
+      },
       ar: { common: arCommon },
       zh: { common: zhCommon },
     },
