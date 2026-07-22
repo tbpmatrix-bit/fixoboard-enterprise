@@ -719,6 +719,7 @@ const AboutPage: React.FC = () => {
                 <p className="font-display font-black text-2xl text-slate-900 mb-6">
                   <Trans
                     i18nKey="green.ctaText"
+                    ns="about"
                     components={{
                       brand: (
                         <span className="text-green-600 underline decoration-green-300 underline-offset-4" />
