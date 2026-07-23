@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { products } from "../../../data/products";
 import {
   DoorOpen,
@@ -12,7 +13,31 @@ import {
 
 const MotionDiv = motion.div as any;
 
+const benefitItems = [
+  {
+    key: "moistureProof",
+    titleKey: "wpcDoors.benefits.items.moistureProof.title",
+    descKey: "wpcDoors.benefits.items.moistureProof.desc",
+  },
+  {
+    key: "warpFree",
+    titleKey: "wpcDoors.benefits.items.warpFree.title",
+    descKey: "wpcDoors.benefits.items.warpFree.desc",
+  },
+  {
+    key: "termiteProof",
+    titleKey: "wpcDoors.benefits.items.termiteProof.title",
+    descKey: "wpcDoors.benefits.items.termiteProof.desc",
+  },
+  {
+    key: "designFlexibility",
+    titleKey: "wpcDoors.benefits.items.designFlexibility.title",
+    descKey: "wpcDoors.benefits.items.designFlexibility.desc",
+  },
+];
+
 const WPCDoorPage: React.FC = () => {
+  const { t } = useTranslation("products");
   const product = products.find((p) => p.slug === "wpc-doors")!;
 
   return (
@@ -29,38 +54,38 @@ const WPCDoorPage: React.FC = () => {
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 text-slate-400 text-xs mb-6">
                 <Link to="/" className="hover:text-white transition-colors">
-                  Home
+                  {t("shared.breadcrumb.home")}
                 </Link>
                 <ChevronRight size={12} />
                 <Link
                   to="/products"
                   className="hover:text-white transition-colors"
                 >
-                  Products
+                  {t("shared.breadcrumb.products")}
                 </Link>
                 <ChevronRight size={12} />
-                <span className="text-white">WPC Solid Doors</span>
+                <span className="text-white">
+                  {t("wpcDoors.breadcrumbCurrent")}
+                </span>
               </div>
 
               {/* Section label */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Industrial Products
+                  {t("wpcDoors.sectionLabel")}
                 </span>
               </div>
 
               <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-2">
-                WPC Solid
+                {t("wpcDoors.headingLine1")}
               </h1>
               <h1 className="font-display text-4xl md:text-5xl font-black text-brand-red leading-tight mb-6">
-                Doors.
+                {t("wpcDoors.headingLine2")}
               </h1>
 
               <p className="text-slate-400 text-lg leading-relaxed mb-10">
-                Plain WPC and CNC-designed doors that are moisture-resistant,
-                warp-free, and termite proof. Maintenance-free aesthetic
-                solution for modern architecture.
+                {t("wpcDoors.description")}
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -68,10 +93,10 @@ const WPCDoorPage: React.FC = () => {
                   to="/contact"
                   className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
                 >
-                  Get Quote <ArrowRight size={15} />
+                  {t("shared.cta.getQuote")} <ArrowRight size={15} />
                 </Link>
                 <button className="inline-flex items-center gap-2 bg-white/10 border border-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all">
-                  Catalogue
+                  {t("shared.cta.catalogue")}
                 </button>
               </div>
             </MotionDiv>
@@ -97,7 +122,7 @@ const WPCDoorPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={16} className="text-brand-blue" />
                   <span className="font-black text-slate-900 text-sm">
-                    Warp-Free for Life
+                    {t("wpcDoors.floatingBadge")}
                   </span>
                 </div>
               </div>
@@ -115,38 +140,21 @@ const WPCDoorPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-blue" />
                 <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
-                  Technical Benefits
+                  {t("wpcDoors.benefits.label")}
                 </span>
               </div>
 
               <h2 className="font-display text-3xl font-black text-slate-900 leading-tight mb-2">
-                Engineered to
+                {t("wpcDoors.benefits.headingLine1")}
               </h2>
               <h2 className="font-display text-3xl font-black text-brand-blue leading-tight mb-10">
-                Last.
+                {t("wpcDoors.benefits.headingLine2")}
               </h2>
 
               <div className="space-y-4">
-                {[
-                  {
-                    title: "Moisture & Damp Proof",
-                    desc: "Ideal for bathrooms and balconies where traditional wood doors swell or rot.",
-                  },
-                  {
-                    title: "Warp-Free Construction",
-                    desc: "Solid extruded composite material ensures dimensions remain stable for decades.",
-                  },
-                  {
-                    title: "Termite Proof",
-                    desc: "Naturally resistant to all biological pests without chemical coating.",
-                  },
-                  {
-                    title: "Design Flexibility",
-                    desc: "Easily CNC-machined for decorative patterns or surface treatments.",
-                  },
-                ].map((item, idx) => (
+                {benefitItems.map((item, idx) => (
                   <MotionDiv
-                    key={idx}
+                    key={item.key}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -159,10 +167,10 @@ const WPCDoorPage: React.FC = () => {
                     />
                     <div>
                       <h4 className="font-display font-black text-slate-900 mb-1 text-sm">
-                        {item.title}
+                        {t(item.titleKey)}
                       </h4>
                       <p className="text-slate-500 text-sm leading-relaxed">
-                        {item.desc}
+                        {t(item.descKey)}
                       </p>
                     </div>
                   </MotionDiv>
@@ -181,7 +189,7 @@ const WPCDoorPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-8">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Specifications
+                  {t("shared.technicalData.label")}
                 </span>
               </div>
 
@@ -192,7 +200,7 @@ const WPCDoorPage: React.FC = () => {
                     className="flex justify-between border-b border-white/10 pb-4"
                   >
                     <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest">
-                      {key}
+                      {t(`shared.specLabels.${key}`)}
                     </span>
                     <span className="text-white font-semibold text-sm">
                       {val}
@@ -204,7 +212,7 @@ const WPCDoorPage: React.FC = () => {
               {/* Applications */}
               <div className="mt-8 bg-brand-blue/10 border border-brand-blue/20 rounded-xl p-5">
                 <span className="text-brand-blue text-[10px] font-semibold uppercase tracking-widest block mb-4">
-                  Core Use Cases
+                  {t("wpcDoors.applications.label")}
                 </span>
                 <div className="grid grid-cols-2 gap-3">
                   {product.applications.map((app, idx) => (
@@ -223,7 +231,7 @@ const WPCDoorPage: React.FC = () => {
                 to="/contact"
                 className="mt-6 inline-flex items-center justify-center gap-2 w-full bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
               >
-                Request Pricing <ArrowRight size={15} />
+                {t("shared.cta.requestPricing")} <ArrowRight size={15} />
               </Link>
             </MotionDiv>
           </div>

@@ -85,7 +85,9 @@
     "breadcrumb": { "home": "Inicio", "products": "Productos" },
     "cta": {
       "requestPricing": "Solicitar Precio",
-      "downloadCatalog": "Descargar Catálogo"
+      "downloadCatalog": "Descargar Catálogo",
+      "getQuote": "Solicitar Cotización",
+      "catalogue": "Catálogo"
     },
     "leadFreeBadge": {
       "title": "Certificado Libre de Plomo",
@@ -140,5 +142,39 @@
     "headingLine1": "PVC / WPC",
     "headingLine2": "Ply.",
     "description": "Un tablero ecológico de nueva generación, altamente duradero y con características superiores a la madera contrachapada tradicional. Resistente a la intemperie, la humedad, el fuego y las termitas."
+  },
+  "wpcDoors": {
+    "breadcrumbCurrent": "Puertas Sólidas WPC",
+    "sectionLabel": "Productos Industriales",
+    "headingLine1": "Puertas Sólidas",
+    "headingLine2": "WPC.",
+    "description": "Puertas de WPC liso y diseñadas por CNC, resistentes a la humedad, sin deformaciones y a prueba de termitas. Solución estética sin mantenimiento para la arquitectura moderna.",
+    "floatingBadge": "Sin Deformaciones de por Vida",
+    "benefits": {
+      "label": "Beneficios Técnicos",
+      "headingLine1": "Diseñadas para",
+      "headingLine2": "Durar.",
+      "items": {
+        "moistureProof": {
+          "title": "A Prueba de Humedad",
+          "desc": "Ideal para baños y balcones donde las puertas de madera tradicionales se hinchan o pudren."
+        },
+        "warpFree": {
+          "title": "Construcción sin Deformaciones",
+          "desc": "El material compuesto extruido sólido garantiza dimensiones estables durante décadas."
+        },
+        "termiteProof": {
+          "title": "A Prueba de Termitas",
+          "desc": "Naturalmente resistente a todas las plagas biológicas sin recubrimiento químico."
+        },
+        "designFlexibility": {
+          "title": "Flexibilidad de Diseño",
+          "desc": "Fácilmente mecanizadas por CNC para patrones decorativos o tratamientos de superficie."
+        }
+      }
+    },
+    "applications": {
+      "label": "Casos de Uso Principales"
+    }
   }
 }

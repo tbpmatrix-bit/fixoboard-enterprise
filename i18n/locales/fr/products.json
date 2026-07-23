@@ -85,7 +85,9 @@
     "breadcrumb": { "home": "Accueil", "products": "Produits" },
     "cta": {
       "requestPricing": "Demander un Devis",
-      "downloadCatalog": "Télécharger le Catalogue"
+      "downloadCatalog": "Télécharger le Catalogue",
+      "getQuote": "Demander un Devis",
+      "catalogue": "Catalogue"
     },
     "leadFreeBadge": {
       "title": "Certifié Sans Plomb",
@@ -140,5 +142,39 @@
     "headingLine1": "PVC / WPC",
     "headingLine2": "Ply.",
     "description": "Un panneau écologique de nouvelle génération, extrêmement durable, avec des caractéristiques supérieures au contreplaqué traditionnel. Résistant aux intempéries, à l'humidité, au feu et aux termites."
+  },
+  "wpcDoors": {
+    "breadcrumbCurrent": "Portes Massives WPC",
+    "sectionLabel": "Produits Industriels",
+    "headingLine1": "Portes Massives",
+    "headingLine2": "WPC.",
+    "description": "Portes en WPC uni et usinées par CNC, résistantes à l'humidité, sans déformation et à l'épreuve des termites. Solution esthétique sans entretien pour l'architecture moderne.",
+    "floatingBadge": "Sans Déformation à Vie",
+    "benefits": {
+      "label": "Avantages Techniques",
+      "headingLine1": "Conçues pour",
+      "headingLine2": "Durer.",
+      "items": {
+        "moistureProof": {
+          "title": "Résistance à l'Humidité",
+          "desc": "Idéal pour les salles de bains et balcons où les portes en bois traditionnelles gonflent ou pourrissent."
+        },
+        "warpFree": {
+          "title": "Construction sans Déformation",
+          "desc": "Le matériau composite extrudé massif garantit des dimensions stables pendant des décennies."
+        },
+        "termiteProof": {
+          "title": "À l'Épreuve des Termites",
+          "desc": "Naturellement résistant à tous les nuisibles biologiques sans traitement chimique."
+        },
+        "designFlexibility": {
+          "title": "Flexibilité de Conception",
+          "desc": "Facilement usinées par CNC pour des motifs décoratifs ou des traitements de surface."
+        }
+      }
+    },
+    "applications": {
+      "label": "Principaux Cas d'Usage"
+    }
   }
 }

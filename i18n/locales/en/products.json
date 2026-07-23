@@ -88,7 +88,9 @@
     },
     "cta": {
       "requestPricing": "Request Pricing",
-      "downloadCatalog": "Download Catalog"
+      "downloadCatalog": "Download Catalog",
+      "getQuote": "Get Quote",
+      "catalogue": "Catalogue"
     },
     "leadFreeBadge": {
       "title": "Lead Free Certified",
@@ -143,5 +145,39 @@
     "headingLine1": "PVC / WPC",
     "headingLine2": "Ply.",
     "description": "A new generation eco-friendly board — highly durable with features superior to traditional plywood. Resistant to weather, moisture, fire, and termites."
+  },
+  "wpcDoors": {
+    "breadcrumbCurrent": "WPC Solid Doors",
+    "sectionLabel": "Industrial Products",
+    "headingLine1": "WPC Solid",
+    "headingLine2": "Doors.",
+    "description": "Plain WPC and CNC-designed doors that are moisture-resistant, warp-free, and termite proof. Maintenance-free aesthetic solution for modern architecture.",
+    "floatingBadge": "Warp-Free for Life",
+    "benefits": {
+      "label": "Technical Benefits",
+      "headingLine1": "Engineered to",
+      "headingLine2": "Last.",
+      "items": {
+        "moistureProof": {
+          "title": "Moisture & Damp Proof",
+          "desc": "Ideal for bathrooms and balconies where traditional wood doors swell or rot."
+        },
+        "warpFree": {
+          "title": "Warp-Free Construction",
+          "desc": "Solid extruded composite material ensures dimensions remain stable for decades."
+        },
+        "termiteProof": {
+          "title": "Termite Proof",
+          "desc": "Naturally resistant to all biological pests without chemical coating."
+        },
+        "designFlexibility": {
+          "title": "Design Flexibility",
+          "desc": "Easily CNC-machined for decorative patterns or surface treatments."
+        }
+      }
+    },
+    "applications": {
+      "label": "Core Use Cases"
+    }
   }
 }
