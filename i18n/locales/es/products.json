@@ -176,5 +176,42 @@
     "applications": {
       "label": "Casos de Uso Principales"
     }
+  },
+  "prelaminatePly": {
+    "breadcrumbCurrent": "Contrachapado WPC Prelaminado",
+    "sectionLabel": "Tableros Acabados de Fábrica",
+    "headingLine1": "Contrachapado",
+    "headingLine2": "WPC Prelaminado.",
+    "description": "Tableros listos para usar, laminados de fábrica en múltiples tonos y texturas. Elimina la necesidad de laminado externo, ahorrando tiempo y costo de mano de obra.",
+    "tags": {
+      "readyToUse": "Listo para Usar",
+      "scratchResistant": "Resistente a Rayones"
+    },
+    "benefits": {
+      "label": "Beneficios Clave",
+      "headingLine1": "Por Qué Elegir",
+      "headingLine2": "Prelaminado?",
+      "items": {
+        "costEfficiency": {
+          "title": "Eficiencia de Costos",
+          "desc": "Cero costo de mano de obra para laminado y cero desperdicio de materia prima."
+        },
+        "surfaceDurability": {
+          "title": "Durabilidad de Superficie",
+          "desc": "El sellado de fábrica a alta presión garantiza que no haya delaminación de bordes con el tiempo."
+        },
+        "designConsistency": {
+          "title": "Consistencia de Diseño",
+          "desc": "Tonos y patrones uniformes en múltiples láminas para proyectos grandes."
+        },
+        "scratchResistance": {
+          "title": "Resistencia a Rayones",
+          "desc": "El acabado superior de grado industrial protege contra el desgaste diario."
+        }
+      }
+    },
+    "cta": {
+      "requestShades": "Solicitar Muestras"
+    }
   }
 }

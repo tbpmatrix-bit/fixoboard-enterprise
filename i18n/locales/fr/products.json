@@ -176,5 +176,42 @@
     "applications": {
       "label": "Principaux Cas d'Usage"
     }
+  },
+  "prelaminatePly": {
+    "breadcrumbCurrent": "Contreplaqué WPC Préstratifié",
+    "sectionLabel": "Panneaux Finis en Usine",
+    "headingLine1": "Contreplaqué WPC",
+    "headingLine2": "Préstratifié.",
+    "description": "Panneaux prêts à l'emploi, stratifiés en usine dans plusieurs teintes et textures. Élimine le besoin de stratification externe, économisant temps et coûts de main-d'œuvre.",
+    "tags": {
+      "readyToUse": "Prêt à l'Emploi",
+      "scratchResistant": "Résistant aux Rayures"
+    },
+    "benefits": {
+      "label": "Avantages Clés",
+      "headingLine1": "Pourquoi Choisir",
+      "headingLine2": "le Préstratifié ?",
+      "items": {
+        "costEfficiency": {
+          "title": "Efficacité des Coûts",
+          "desc": "Aucun coût de main-d'œuvre pour la stratification et aucun gaspillage de matière première."
+        },
+        "surfaceDurability": {
+          "title": "Durabilité de Surface",
+          "desc": "Le collage en usine à haute pression garantit l'absence de délaminage des bords dans le temps."
+        },
+        "designConsistency": {
+          "title": "Cohérence du Design",
+          "desc": "Teintes et motifs uniformes sur plusieurs panneaux pour les grands projets."
+        },
+        "scratchResistance": {
+          "title": "Résistance aux Rayures",
+          "desc": "Le revêtement supérieur de qualité industrielle protège contre l'usure quotidienne."
+        }
+      }
+    },
+    "cta": {
+      "requestShades": "Demander des Échantillons"
+    }
   }
 }

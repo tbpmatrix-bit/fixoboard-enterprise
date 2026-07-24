@@ -179,5 +179,42 @@
     "applications": {
       "label": "Core Use Cases"
     }
+  },
+  "prelaminatePly": {
+    "breadcrumbCurrent": "Prelaminate WPC Ply",
+    "sectionLabel": "Factory Finished Boards",
+    "headingLine1": "Prelaminate",
+    "headingLine2": "WPC Ply.",
+    "description": "Ready-to-use boards factory-laminated in multiple shades and textures. Eliminates the need for external lamination, saving time and labor cost.",
+    "tags": {
+      "readyToUse": "Ready-to-Use",
+      "scratchResistant": "Scratch Resistant"
+    },
+    "benefits": {
+      "label": "Key Benefits",
+      "headingLine1": "Why Choose",
+      "headingLine2": "Prelaminate?",
+      "items": {
+        "costEfficiency": {
+          "title": "Cost Efficiency",
+          "desc": "Zero labor cost for lamination and zero raw material wastage."
+        },
+        "surfaceDurability": {
+          "title": "Surface Durability",
+          "desc": "High-pressure factory bonding ensures no edge delamination over time."
+        },
+        "designConsistency": {
+          "title": "Design Consistency",
+          "desc": "Uniform shades and patterns across multiple sheets for large projects."
+        },
+        "scratchResistance": {
+          "title": "Scratch Resistance",
+          "desc": "Industrial-grade top coat protects against daily wear and tear."
+        }
+      }
+    },
+    "cta": {
+      "requestShades": "Request Shades"
+    }
   }
 }

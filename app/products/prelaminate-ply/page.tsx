@@ -1,12 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { products } from "../../../data/products";
 import { Zap, Package, ChevronRight, ArrowRight } from "lucide-react";
 
 const MotionDiv = motion.div as any;
 
+const benefitItems = [
+  {
+    key: "costEfficiency",
+    titleKey: "prelaminatePly.benefits.items.costEfficiency.title",
+    descKey: "prelaminatePly.benefits.items.costEfficiency.desc",
+  },
+  {
+    key: "surfaceDurability",
+    titleKey: "prelaminatePly.benefits.items.surfaceDurability.title",
+    descKey: "prelaminatePly.benefits.items.surfaceDurability.desc",
+  },
+  {
+    key: "designConsistency",
+    titleKey: "prelaminatePly.benefits.items.designConsistency.title",
+    descKey: "prelaminatePly.benefits.items.designConsistency.desc",
+  },
+  {
+    key: "scratchResistance",
+    titleKey: "prelaminatePly.benefits.items.scratchResistance.title",
+    descKey: "prelaminatePly.benefits.items.scratchResistance.desc",
+  },
+];
+
 const PrelaminatePlyPage: React.FC = () => {
+  const { t } = useTranslation("products");
   const product = products.find((p) => p.slug === "prelaminate-ply")!;
 
   return (
@@ -23,48 +48,48 @@ const PrelaminatePlyPage: React.FC = () => {
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 text-slate-400 text-xs mb-6">
                 <Link to="/" className="hover:text-white transition-colors">
-                  Home
+                  {t("shared.breadcrumb.home")}
                 </Link>
                 <ChevronRight size={12} />
                 <Link
                   to="/products"
                   className="hover:text-white transition-colors"
                 >
-                  Products
+                  {t("shared.breadcrumb.products")}
                 </Link>
                 <ChevronRight size={12} />
-                <span className="text-white">Prelaminate WPC Ply</span>
+                <span className="text-white">
+                  {t("prelaminatePly.breadcrumbCurrent")}
+                </span>
               </div>
 
               {/* Section label */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Factory Finished Boards
+                  {t("prelaminatePly.sectionLabel")}
                 </span>
               </div>
 
               <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-2">
-                Prelaminate
+                {t("prelaminatePly.headingLine1")}
               </h1>
               <h1 className="font-display text-4xl md:text-5xl font-black text-brand-red leading-tight mb-6">
-                WPC Ply.
+                {t("prelaminatePly.headingLine2")}
               </h1>
 
               <p className="text-slate-400 text-lg leading-relaxed mb-10">
-                Ready-to-use boards factory-laminated in multiple shades and
-                textures. Eliminates the need for external lamination, saving
-                time and labor cost.
+                {t("prelaminatePly.description")}
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-white text-xs font-semibold">
                   <Zap size={14} className="text-brand-red" />
-                  Ready-to-Use
+                  {t("prelaminatePly.tags.readyToUse")}
                 </div>
                 <div className="flex items-center gap-2 text-white text-xs font-semibold">
                   <Package size={14} className="text-brand-red" />
-                  Scratch Resistant
+                  {t("prelaminatePly.tags.scratchResistant")}
                 </div>
               </div>
             </MotionDiv>
@@ -98,38 +123,21 @@ const PrelaminatePlyPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-6 h-0.5 bg-brand-blue" />
                 <span className="text-brand-blue text-xs font-semibold uppercase tracking-[0.25em]">
-                  Key Benefits
+                  {t("prelaminatePly.benefits.label")}
                 </span>
               </div>
 
               <h2 className="font-display text-3xl font-black text-slate-900 leading-tight mb-2">
-                Why Choose
+                {t("prelaminatePly.benefits.headingLine1")}
               </h2>
               <h2 className="font-display text-3xl font-black text-brand-blue leading-tight mb-10">
-                Prelaminate?
+                {t("prelaminatePly.benefits.headingLine2")}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Cost Efficiency",
-                    desc: "Zero labor cost for lamination and zero raw material wastage.",
-                  },
-                  {
-                    title: "Surface Durability",
-                    desc: "High-pressure factory bonding ensures no edge delamination over time.",
-                  },
-                  {
-                    title: "Design Consistency",
-                    desc: "Uniform shades and patterns across multiple sheets for large projects.",
-                  },
-                  {
-                    title: "Scratch Resistance",
-                    desc: "Industrial-grade top coat protects against daily wear and tear.",
-                  },
-                ].map((item, idx) => (
+                {benefitItems.map((item, idx) => (
                   <MotionDiv
-                    key={idx}
+                    key={item.key}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -138,10 +146,10 @@ const PrelaminatePlyPage: React.FC = () => {
                   >
                     <div className="w-1 h-6 bg-brand-blue rounded-full mb-4" />
                     <h4 className="font-display font-black text-slate-900 mb-2">
-                      {item.title}
+                      {t(item.titleKey)}
                     </h4>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      {item.desc}
+                      {t(item.descKey)}
                     </p>
                   </MotionDiv>
                 ))}
@@ -159,7 +167,7 @@ const PrelaminatePlyPage: React.FC = () => {
               <div className="flex items-center gap-2 mb-8">
                 <div className="w-6 h-0.5 bg-brand-red" />
                 <span className="text-brand-red text-xs font-semibold uppercase tracking-[0.25em]">
-                  Technical Data
+                  {t("shared.technicalData.label")}
                 </span>
               </div>
 
@@ -167,7 +175,7 @@ const PrelaminatePlyPage: React.FC = () => {
                 {Object.entries(product.specifications).map(([key, val]) => (
                   <div key={key} className="border-b border-white/10 pb-4">
                     <span className="text-slate-400 text-[10px] font-semibold uppercase tracking-widest block mb-1">
-                      {key}
+                      {t(`shared.specLabels.${key}`)}
                     </span>
                     <span className="text-white font-semibold text-sm">
                       {val}
@@ -180,7 +188,7 @@ const PrelaminatePlyPage: React.FC = () => {
                 to="/contact"
                 className="mt-8 inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-lg shadow-brand-red/20"
               >
-                Request Shades <ArrowRight size={15} />
+                {t("prelaminatePly.cta.requestShades")} <ArrowRight size={15} />
               </Link>
             </MotionDiv>
           </div>
